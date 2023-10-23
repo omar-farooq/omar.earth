@@ -7,10 +7,16 @@ import duffa from '../public/duffa-cropped.png'
 import e from '../public/e.jpg'
 import Email from '../public/email.png'
 import eye from '../public/eye.png'
+import Floppy from '../public/floppy.png'
+import Flower from '../public/flower.png'
 import GithubIcon from '../public/github-icon.png'
 import heart from '../public/heart.png'
+import MaleSymbol from '../public/male.png'
+import PalmTree from '../public/palmtree.png'
 import reel from '../public/reel.png'
 import simpsonstv from '../public/simpsonstv.jpg'
+import Triforce from '../public/triforce.png'
+import Water from '../public/water.png'
 import zah from '../public/zah.webp'
 
 const Box = (props) => {
@@ -25,7 +31,7 @@ const Box = (props) => {
                     onClick={(e) => setToggled(!toggled)}
                     className={`${props.bgcolor} text-8xl text-center flex justify-center items-center text-red-300`}
                 >
-                    <div className="flex justify-center">
+                    <div className="flex justify-center max-h-full">
                         {
                             showLetter ? props.letter : props.image 
                         }
@@ -34,11 +40,15 @@ const Box = (props) => {
         {
             toggled &&
                 <div 
-                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center`}
+                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center overflow-scroll`}
                     style={props.gridDimensions}
                     onClick={(e) => setToggled(!toggled)}
                 >
-                    <div className="w-3/4 space-y-8 animate-fadeIn">{props.overlayText}</div>
+                    <div className="w-3/4 space-y-8 animate-fadeIn max-h-full">
+                        <div className="flex flex-col justfiy-center">
+                        {props.overlayText}
+                        </div>
+                    </div>
                 </div>
         }
         </>
@@ -104,7 +114,7 @@ export default function Home() {
                             <a href="/blog">Blog</a>
                             <button onClick={scrollToProjects}>Projects</button>
                             <button onClick={scrollToAbout}>About</button>
-                            <div>Contact</div>
+                            <div><a href="mailto:omrrrrrrr@gmail.com">Contact</a></div>
                         </div>
                     </nav>
 
@@ -116,12 +126,20 @@ export default function Home() {
                                 bgcolor="bg-red-300" 
                                 bordercolor="border-red-300" 
                                 gridDimensions={gridDimensions} 
-                                image="" 
+                                image={
+                                    <Image 
+                                        src={Floppy} 
+                                        alt="First computer"
+                                        style= {{
+                                            width: "60%"
+                                        }}
+                                    />
+                                } 
                                 overlayText={<><p>This is a remake of my website</p></>} 
                             />
 
                             <Box 
-                                letter="M" 
+                                letter="R" 
                                 bgcolor="bg-orange-300" 
                                 bordercolor="border-orange-300" 
                                 gridDimensions={gridDimensions} 
@@ -139,16 +157,15 @@ export default function Home() {
                                 } 
                             />
 
-                            <Box bgcolor="bg-amber-200" bordercolor="border-amber-200" letter="A" gridDimensions={gridDimensions} image="" overlayText="" />
                             <Box 
-                                letter="R" 
-                                bgcolor="bg-lime-300" 
-                                bordercolor="border-lime-300" 
+                                letter="E" 
+                                bgcolor="bg-amber-200" 
+                                bordercolor="border-amber-200" 
                                 gridDimensions={gridDimensions} 
                                 image={
                                     <Image
-                                        src={briefcase}
-                                        alt="night shift"
+                                        src={PalmTree}
+                                        alt="where I'm from"
                                         style={{
                                             width: "80%"
                                         }}
@@ -157,9 +174,25 @@ export default function Home() {
                                 overlayText="" 
                             />
                             <Box 
+                                letter="V" 
+                                bgcolor="bg-lime-300" 
+                                bordercolor="border-lime-300" 
+                                gridDimensions={gridDimensions} 
+                                image={
+                                    <Image
+                                        src={briefcase}
+                                        alt="night shift"
+                                        style={{
+                                            width: "100%"
+                                        }}
+                                    />
+                                }
+                                overlayText="" 
+                            />
+                            <Box 
                                 bgcolor="bg-green-300" 
                                 bordercolor="border-green-300" 
-                                letter="D" 
+                                letter="O" 
                                 gridDimensions={gridDimensions} 
                                 image={
                                     <Image
@@ -173,7 +206,7 @@ export default function Home() {
                                 overlayText="" 
                             />
                             <Box 
-                                letter="O" 
+                                letter="L" 
                                 bgcolor="bg-white" 
                                 bordercolor="border-black" 
                                 gridDimensions={gridDimensions} 
@@ -196,11 +229,26 @@ export default function Home() {
                                     </div>
                                 }
                             />
-                            <Box bgcolor="bg-teal-200" bordercolor="border-teal-200" letter="T" gridDimensions={gridDimensions} image="" overlayText="" />
                             <Box 
+                                letter="U" 
+                                bgcolor="bg-teal-200" 
+                                bordercolor="border-teal-200" 
+                                gridDimensions={gridDimensions} 
+                                image={
+                                    <Image
+                                        src={MaleSymbol}
+                                        alt="I am male"
+                                        style={{
+                                            width: "50%"
+                                        }}
+                                    />
+                                }
+                                overlayText="" 
+                            />
+                            <Box 
+                                letter="T" 
                                 bgcolor="bg-blue-500" 
                                 bordercolor="border-blue-500" 
-                                letter="E" 
                                 gridDimensions={gridDimensions} 
                                 image={
                                     <Image
@@ -214,7 +262,7 @@ export default function Home() {
                                 overlayText="" 
                             />
                             <Box 
-                                letter="A" 
+                                letter="I" 
                                 bgcolor="bg-cyan-300" 
                                 bordercolor="border-cyan-300" 
                                 gridDimensions={gridDimensions} 
@@ -230,27 +278,51 @@ export default function Home() {
                                 overlayText="" 
                             />
                             <Box 
-                                letter="R" 
+                                letter="O" 
                                 bgcolor="bg-amber-300" 
                                 bordercolor="border-amber-300" 
                                 gridDimensions={gridDimensions} 
-                                image="" 
+                                image={
+                                    <Image
+                                        src={Triforce}
+                                        alt="Best game of all time"
+                                        style={{
+                                            width: "100%"
+                                        }}
+                                    />
+                                }
                                 overlayText="" 
                             />
                             <Box 
-                                letter="T" 
+                                letter="N" 
                                 bgcolor="bg-purple-300" 
                                 bordercolor="border-purple-300" 
                                 gridDimensions={gridDimensions} 
-                                image="" 
+                                image={
+                                    <Image
+                                        src={Flower}
+                                        alt="Going back to nature"
+                                        style={{
+                                            width: "80%",
+                                        }}
+                                    />
+                                }
                                 overlayText="" 
                             />
                             <Box 
-                                letter="H" 
+                                letter="" 
                                 bgcolor="bg-rose-300" 
                                 bordercolor="border-rose-300" 
                                 gridDimensions={gridDimensions} 
-                                image="" 
+                                image={
+                                    <Image
+                                        src={Water}
+                                        alt="Eating Healthy"
+                                        style={{
+                                            width: "100%",
+                                        }}
+                                    />
+                                }
                                 overlayText="" 
                             />
                         </div>
@@ -331,14 +403,13 @@ export default function Home() {
                         </h2>
                         <div className="text-xl w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
-                            <br />
                             <p>I've re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I've elected to use a different stack involving nextjs and GoLang. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it's obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we'll be completely obsolete as AI takes over :)</p>
-                            <br />
                             <p>My personal goals are to watch the world change into one big society that helps each other and to help be a part of that change.</p>
                         </div>
                     </section>
                     <footer>
                         <div className="bg-stone-100 flex flex-row items-center justify-center gap-2 p-2">
+                            <a href="https://github.com/omar-farooq" target="_blank">
                             <Image 
                                 src={GithubIcon}
                                 style={{
@@ -346,6 +417,9 @@ export default function Home() {
                                     width: "80px"
                                 }}
                             />
+                            </a>
+
+                            <a href="mailto:omrrrrrrr@gmail.com">
                             <Image 
                                 src={Email}
                                 style={{
@@ -353,6 +427,7 @@ export default function Home() {
                                     width: "80px"
                                 }}
                             />
+                            </a>
                         </div>
                     </footer>
                 </div>

@@ -30,3 +30,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+p {
+    margin-bottom: 10px;
+}

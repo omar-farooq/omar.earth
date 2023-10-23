@@ -27,7 +27,7 @@ const bask = Libre_Baskerville({
     subsets: ['latin'],
 })
 
-export default function BlogPostLayout({ postData }) {
+export default function BlogPostLayout({ postData,lastTenPosts }) {
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
 
     useEffect(() => {
@@ -42,11 +42,14 @@ export default function BlogPostLayout({ postData }) {
 
         window.addEventListener("scroll", scrollPastHeader);
         return () => window.removeEventListener("scroll", scrollPastHeader)
-    },[window.pageYOffset])
+    },[])
 
     return (                                                                                                                                                       
 		<>
-			<div className={`w-full h-[calc(55vh)] bg-[url('/blog_images/whale.webp')] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl flex items-end justify-center ${bask.className}`}>
+			<div 
+                className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl flex items-end justify-center contrast-[.70] ${bask.className}`} 
+                style={{backgroundImage: `url(/blog_images/${postData.backgroundImage})`}}
+            >
                 <div className={`mb-4 ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
             </div>
 
@@ -60,7 +63,7 @@ export default function BlogPostLayout({ postData }) {
                                 Blog
                         </div>
                     </header>
-                    <main className="">
+                    <main className="flex flex-row">
                         <div className="w-3/4 flex justify-center">
                             <div className="w-5/6 flex flex-col items-center text-center">
                                 <h2 className={`text-3xl mb-6 ${bitter.className}`}>
@@ -71,7 +74,16 @@ export default function BlogPostLayout({ postData }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/4 flex justify-center">
+                        <div className="w-1/4 flex flex-col items-center text-center">
+                            <h4 className="text-xl">Recent Posts</h4>
+                            <ul>
+                                {lastTenPosts.map(x => 
+                                    <li>
+                                        <a href={`${x.id}`}>{x.title}</a>
+                                    </li>
+                                )}
+                            </ul>
+                            
                         </div>
 
                     </main>

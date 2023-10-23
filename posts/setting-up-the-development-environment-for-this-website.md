@@ -1,6 +1,10 @@
 ---
 title: 'Setting up my development environment'
 date: '2023-10-15'
+series: 'recreating my website'
+part: '1'
+backgroundImage: 'whale.webp'
+shortDescription: 'why I remade the website, how I remade it and the challenges involved'
 ---
 
 When re-creating this website, the first thing I had to consider is how I'm going to develop the website.
