@@ -47,7 +47,7 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
     return (                                                                                                                                                       
 		<>
 			<div 
-                className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl flex items-end justify-center contrast-[.70] ${bask.className}`} 
+                className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl items-end justify-center contrast-[.70] ${bask.className} hidden md:flex`} 
                 style={{backgroundImage: `url(/blog_images/${postData.backgroundImage})`}}
             >
                 <div className={`mb-4 ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
@@ -63,8 +63,8 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
                                 Blog
                         </div>
                     </header>
-                    <main className="flex flex-row">
-                        <div className="w-3/4 flex justify-center">
+                    <main className="flex md:flex-row flex-col">
+                        <div className="md:w-3/4 flex justify-center">
                             <div className="w-5/6 flex flex-col items-center text-center">
                                 <h2 className={`text-3xl mb-6 ${bitter.className}`}>
                                     {postData.title}
@@ -74,8 +74,8 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/4 flex flex-col items-center text-center">
-                            <h4 className="text-xl">Recent Posts</h4>
+                        <div className="md:w-1/4 flex flex-col items-center text-center md:mt-0 mt-10">
+                            <h4 className="text-2xl">Recent Posts</h4>
                             <ul>
                                 {lastTenPosts.map(x => 
                                     <li>

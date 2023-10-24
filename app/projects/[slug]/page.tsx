@@ -17,7 +17,7 @@ export default async function Project({ params }) {
     const projectData = await getProjectData(params.slug)
     return (
         <>
-            <div className="w-1/2 border-r border-black flex justify-center">
+            <div className="md:w-1/2 md:border-r border-black flex justify-center">
                 <div className="w-5/6 flex flex-col items-center text-center">
                     <h2 className={`text-3xl mb-6 ${bitter.className}`}>
                         {projectData.title}
@@ -29,7 +29,7 @@ export default async function Project({ params }) {
                     />
                 </div>
             </div>
-            <div className="w-1/2 border-l border-black flex justify-center">
+            <div className="md:w-1/2 md:border-l border-black flex justify-center">
                 <div className={`w-5/6 flex justify-center text-center prose ${montserrat.className}`}>
                     <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
                 </div>

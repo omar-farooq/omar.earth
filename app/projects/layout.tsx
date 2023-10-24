@@ -19,7 +19,7 @@ export default function ProjectLayout({ children }) {
                         </div>
                     </header>
                     <main className="">
-                        <div className="flex flex-row mt-10">
+                        <div className="flex flex-col md:flex-row mt-10">
                             {children}
                         </div>
                     </main>

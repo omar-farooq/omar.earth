@@ -31,7 +31,7 @@ const Box = (props) => {
                     onMouseOver={e => setShowLetter(true)} 
                     onMouseLeave={e => setShowLetter(false)}
                     onClick={(e) => setToggled(!toggled)}
-                    className={`${props.bgcolor} text-8xl text-center flex justify-center items-center text-red-300`}
+                    className={`${props.bgcolor} text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
                 >
                     <div className="flex justify-center max-h-full">
                         {
@@ -42,7 +42,7 @@ const Box = (props) => {
         {
             toggled &&
                 <div 
-                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center overflow-scroll`}
+                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center overflow-scroll cursor-pointer`}
                     style={props.gridDimensions}
                     onClick={(e) => setToggled(!toggled)}
                 >
@@ -105,13 +105,13 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center min-w-full">
-            <div className="w-9/12 flex flex-col items-center">
+            <div className="lg:w-9/12 flex flex-col items-center">
 
 
                 <div className="h-screen w-full flex flex-col items-center">
 
                     <nav className="min-w-full bg-black h-20 text-white">
-                        <div className="flex flex-row gap-x-3 text-4xl justify-center h-full items-center">
+                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-2xl justify-center h-full items-center">
                             <div className="border-x-4 border-white h-full flex items-center">Menu</div>
                             <a href="/blog">Blog</a>
                             <button onClick={scrollToProjects}>Projects</button>
@@ -387,33 +387,34 @@ export default function Home() {
                 </div>
 
                 <div className="border-t-2 border-x-2 border-black w-full">
-                    <section className="bg-neutral-200 text-center flex flex-row justify-center items-center">
+                    <section className="bg-neutral-200 text-center flex lg:flex-row flex-col justify-center items-center">
                         <div className="w-3/5">
                             <div className="text-4xl">
                                 The Blog
                             </div>
-                            <div className="text-xl mt-4">
+                            <div className="md:text-lg lg:text-xl mt-4">
                                 <p>I've started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
                                 <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
                                 <a href="/blog">Click here to check out the blog list</a>
                             </div>
                         </div>
+                        <div className="w-1/2 lg:w-fit">
                         <Image
                             src={Docker}
                             alt="Development Tools"
                         />
+                        </div>
                     </section>
                     <section className="bg-black text-white">
                         <div className="flex flex-row justify-center items-center">
-                            <div className="text-5xl mr-2">save the <span className="text-green-700">.earth</span></div>
+                            <div className="text-xl md:text-2xl lg:text-5xl mr-2">save the <span className="text-green-700">.earth</span></div>
+                            <div className="w-12 md:w-16 lg:w-24">
                             <Image
                                 src={Earth}
                                 alt="Planet Earth"
-                                style={{
-                                    width: "6%",
-                                }}
                             />
-                            <div className="text-2xl ml-2">New Project coming later</div>
+                            </div>
+                            <div className="text-lg md:text-xl lg:text-2xl ml-2">New Project coming later</div>
                         </div>
                     </section>
                     <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
@@ -467,7 +468,7 @@ export default function Home() {
                         <h2 className="text-4xl p-2">
                             About
                         </h2>
-                        <div className="text-xl w-2/3 mt-2">
+                        <div className="text-md md:text-lg lg:text-xl w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
                             <p>I've re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I've elected to use a different stack involving nextjs and GoLang. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it's obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we'll be completely obsolete as AI takes over :)</p>
                             <p>My personal goals are to watch the world change into one big society that helps each other and to help be a part of that change.</p>
