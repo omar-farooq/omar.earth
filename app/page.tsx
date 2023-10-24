@@ -4,7 +4,9 @@ import Image from 'next/image'
 import bike from '../public/bike.png'
 import briefcase from '../public/briefcase.png'
 import duffa from '../public/duffa-cropped.png'
+import Docker from '../public/docker.webp'
 import e from '../public/e.jpg'
+import Earth from '../public/earth.jpeg'
 import Email from '../public/email.png'
 import eye from '../public/eye.png'
 import Floppy from '../public/floppy.png'
@@ -135,7 +137,7 @@ export default function Home() {
                                         }}
                                     />
                                 } 
-                                overlayText={<><p>This is a remake of my website</p></>} 
+                                overlayText={<><p>My first personal computer was a 486 with Windows 95.</p><p>Apart from playing games, the most exciting aspect of computers at that time that I remember was word processing and, not long after, going on the internet. Changing the font and text colour in Word was exciting and novel when I was young, not so much now.</p></>} 
                             />
 
                             <Box 
@@ -153,7 +155,7 @@ export default function Home() {
                                     />
                                 } 
                                 overlayText={
-                                    <><p>Since the early internet, everyone has used the web for cat pictures and conspiracy theories. I will give my personal favourite based on what I've read:</p><p>A couple of years ago I read that someone had claimed in an East Asian country that they are able to create clones. They are not legally allowed to create human clones but they can successfully clone peoples pets. They claimed that they've tried human cloning and it's successful (I read this in the Telegraph so it's a real claim). I think someone has clones running around or maybe they're harvesting them for organs or as slaves.</p></>
+                                    <><p>Since the early internet, everyone has used the web for cat pictures and conspiracy theories. I will give my personal favourite based on what I've read:</p><p>Several years ago I read in the Telegraph that someone had claimed in an East Asian country that they are able to create clones. They are not legally allowed to create human clones but they can successfully clone peoples pets. They claimed that they've tried human cloning and it's successful. I think someone has clones running around or maybe they're harvesting them for organs or as slaves.</p></>
                                 } 
                             />
 
@@ -171,7 +173,12 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>I come from Manchester, UK where it's always sunny and never rains</p>
+                                        <p>Mark Twain said "I would like to live in Manchester England, the transition between Manchester and death would be unnoticeable"</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="V" 
@@ -187,7 +194,14 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>For a year, my job involved doing a night shift for which I had to sleep during the days and alter my sleeping pattern</p>
+                                        <p>How I did this was sleep as soon as I came home. Sometimes I'd want to do something in the evening like go swimming or play ultimate, or something would wake me up, which meant that I'd only get 4 or 5 hours sleep. I would then sleep for a few hours before work to try and catch up on sleep</p>
+                                        <p>In terms of eating, my pattern was messed up in that I'd have breakfast when I woke up in the evening, half my dinner before a nap (If I had a nap), the other half after a nap and lunch when I got home from work.</p>
+                                        <p>I did have to give it up in the end because I couldn't keep it up for longer than a year</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 bgcolor="bg-green-300" 
@@ -203,7 +217,13 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>Many years ago we were being taught at school that various things were predicted for the future: such as increased storms, droughts and flooding due to a phenomena known as "global warming"</p>
+                                        <p>A lot of people laughed this off as an exaggerated dystopian prediction, and people still do but there is a lot of physical evidence as well as all the previous predictions coming true</p>
+                                        <p>I ride my bike everywhere and don't own a car. It might seem excessive but I think it's important for everyone to sacrifice something in order to make the world liveable. I don't think that's going to happen judging by history and human nature...</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="L" 
@@ -243,7 +263,11 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>When I started on a helpdesk I had to shadow people and listen into conversations. One day I was shadowing a woman and another woman was on the other end of the line discussing how men are pigs. It was amusing but awkward for the person I was shadowing.</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="T" 
@@ -253,13 +277,20 @@ export default function Home() {
                                 image={
                                     <Image
                                         src={e}
-                                        alt=""
+                                        alt="Mathematics and pi"
                                         style={{
                                             width: "80%"
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>I qualified as a Mathematician, although I don't practice it thanks to my jobs in tech.</p>
+                                        <p>My favourite subject from studying mathematics was relativity. It was easily the most interesting as you could see its practical applications, but also the mathematical logic behind it was some of the most advanced I've ever seen.</p>
+                                        <p>The most interesting piece of math philosophy has to be the idea that the number pi, an infinite number, could contain every single piece of information that has, does and will ever exist. It is thought to contain everything from the world we live in to an alternate world where everything but me exists (I know, tragedy.)</p>
+                                        <p>I guess the most interesting thing would be if I could search it and find out what a world without me would be like. What would be impossible is to try and find out the future since there are probably versions of my life within it where I died yesterday, last week etc.</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="I" 
@@ -275,7 +306,12 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>A world without war and conflict and separation would be my ideal. Greed would also have to go.</p>
+                                        <p>From what I've seen, the people who are in a position to make changes to benefit others have the mindset of 'I had to struggle, so everyone else should' or 'The system works for me so it seems fine'. No one seems to be voting for change either which is strange to me.</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="O" 
@@ -291,7 +327,13 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>For me Ocarina of Time is the greatest game ever.</p>
+                                        <p>I haven't played many video games since which have come close and playing such a game so young perhaps killed my love of video games since it's hard to find a game that matches upto it and keeps my interest.</p>
+                                        <p>I still think the Zelda series is great and love the new games that come out from the series. The switch games in a higher resolution are gorgeous and are how I imagined the N64 games were when playing them, but there's still an element from the older games that's missing.</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="N" 
@@ -307,7 +349,14 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>I had the interesting experience of going to various places in France and doing some organic farm work (voluntarily). One thing that I found is that everyone seems to have a different situation regarding the land that they worked on. Some people bought it, some inherited, some rented.</p>
+                                        <p>The nicest I did work on was some guy who had worked hard for his land and appreciated doing minimal work.</p>
+                                        <p>The worst was someone who was stressed out about working fast and she rented her land.</p>
+                                        <p>It made me think about land ownership and how stupid it all really is. We're an exponentially growing population - how can you put a monetary value on something that is finite that is required by everyone? Why not just own property but not the land itself?</p>
+                                    </>
+                                }
                             />
                             <Box 
                                 letter="" 
@@ -323,32 +372,49 @@ export default function Home() {
                                         }}
                                     />
                                 }
-                                overlayText="" 
+                                overlayText={
+                                    <>
+                                        <p>I try to avoid anything with refined sugar in it. For quite a while I have avoided drinking anything but water. It's become quite apparent that sugar is the cause of a lot of health problems and I've been taught this from a young age</p>
+                                        <p>Since I feel that knowing this has really helped me in life, I will try to pass it on as well as saying that fish is really good, avoid eating too much meat, chips are bland without ketchup and mayo and there's a lot of healthy food which is more appetising</p>
+                                        <p>A lot of people say that things are ok in moderation but I don't believe in that theory. I think that a lot of the things we consume in 'moderation' is doing damage that takes longer to recover from than moderation allows for (whatever that even means - moderation is quite subjective).</p>
+                                        <p>I can eat fruit every day, really enjoy it and not get fat, so why would I resort to eating crisps and chocolate which is nowhere near as refreshing?</p>
+                                    </>
+                                }
                             />
                         </div>
                     </div>
-                        <div className="z-10 absolute w-9/12 h-[calc(100%-87px)] mt-20 flex items-center justify-center hidden">
-                            <div className="w-11/12 h-3/4 bg-white border-8 border-black">
-                                this is here
-                            </div>
-                        </div>
 
                 </div>
 
                 <div className="border-t-2 border-x-2 border-black w-full">
-                    <section className="bg-neutral-200 text-center flex flex-row">
+                    <section className="bg-neutral-200 text-center flex flex-row justify-center items-center">
                         <div className="w-3/5">
                             <div className="text-4xl">
                                 The Blog
                             </div>
                             <div className="text-xl mt-4">
-                                In my latest blog I dicuss why I remade the website, how I remade it and the challenges involved
+                                <p>I've started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
+                                <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
+                                <a href="/blog">Click here to check out the blog list</a>
                             </div>
                         </div>
-                        <div>image here</div>
+                        <Image
+                            src={Docker}
+                            alt="Development Tools"
+                        />
                     </section>
                     <section className="bg-black text-white">
-                        save the .earth
+                        <div className="flex flex-row justify-center items-center">
+                            <div className="text-5xl mr-2">save the <span className="text-green-700">.earth</span></div>
+                            <Image
+                                src={Earth}
+                                alt="Planet Earth"
+                                style={{
+                                    width: "6%",
+                                }}
+                            />
+                            <div className="text-2xl ml-2">New Project coming later</div>
+                        </div>
                     </section>
                     <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
                         <h2 className="text-rose-200 text-4xl p-2">Projects</h2>
