@@ -27,7 +27,7 @@ const bask = Libre_Baskerville({
     subsets: ['latin'],
 })
 
-export default function BlogPostLayout({ postData,lastTenPosts }) {
+export default function BlogPostLayout({ postData, lastTenPosts } : {postData:any, lastTenPosts:any}) {
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
 
     useEffect(() => {
@@ -77,8 +77,8 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
                         <div className="md:w-1/4 flex flex-col items-center text-center md:mt-0 mt-10">
                             <h4 className="text-2xl">Recent Posts</h4>
                             <ul>
-                                {lastTenPosts.map(x => 
-                                    <li>
+                                {lastTenPosts.map((x : any) => 
+                                    <li key={x.id}>
                                         <a href={`${x.id}`}>{x.title}</a>
                                     </li>
                                 )}
