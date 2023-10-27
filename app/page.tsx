@@ -109,7 +109,7 @@ export default function Home() {
             <div className="lg:w-9/12 flex flex-col items-center">
 
 
-                <div className="md:h-screen w-full flex flex-col items-center">
+                <div className="lg:h-screen w-full flex flex-col items-center bg-white md:bg-inherit">
 
                     <nav className="min-w-full bg-black text-white">
                         <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-xl justify-center h-full items-center">
@@ -121,7 +121,7 @@ export default function Home() {
                         </div>
                     </nav>
 
-                    <div className="h-full w-11/12 flex items-center py-10 md:py-0 bg-inherit">
+                    <div className="h-full w-full lg:w-11/12 flex items-center py-10 lg:py-0 bg-inherit">
                         <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
                             <Box 
@@ -388,8 +388,8 @@ export default function Home() {
                 </div>
 
                 <div className="border-t-2 border-x-2 border-black w-full">
-                    <section className="bg-neutral-200 text-center flex lg:flex-row flex-col justify-center items-center">
-                        <div className="w-3/5">
+                    <section className="bg-neutral-200 text-center flex md:flex-row flex-col justify-center items-center">
+                        <div className="w-3/5 my-4">
                             <div className="text-xl md:text-4xl text-black">
                                 The Blog
                             </div>
