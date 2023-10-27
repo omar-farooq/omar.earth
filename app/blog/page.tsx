@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getSortedPostsData } from '../../lib/posts';
 import { Crushed } from 'next/font/google';
 
@@ -13,7 +14,7 @@ export default async function BlogList() {
     return (
 
         <>
-            <div className="min-h-screen bg-white flex justify-center">
+            <div className="min-h-screen bg-white flex justify-center text-black">
                 <div className="w-11/12">
                     <header>
                         <nav className="text-3xl">
@@ -29,7 +30,7 @@ export default async function BlogList() {
                                 <li className="m-8" key={id}>
                                   {date}
                                   <br />
-                                  <a href={`/blog/${id}`} className="text-2xl">{title}</a>
+                                  <Link href={`/blog/${id}`} className="text-2xl">{title}</Link>
                                 </li>
                             ))}
                         </ul>

@@ -8,7 +8,7 @@ const crushed = Crushed({
 export default function ProjectLayout({ children }) {
     return (
         <>
-            <div className="min-h-screen bg-white flex justify-center">
+            <div className="min-h-screen bg-white flex justify-center text-black">
                 <div className="w-11/12">
                     <header>
                         <nav className="bg-white text-3xl">

@@ -5,6 +5,7 @@ import { Crushed } from 'next/font/google'
 import { Libre_Baskerville } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const bitter = Bitter({
     weight: '600',
@@ -53,7 +54,7 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
                 <div className={`mb-4 ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
             </div>
 
-            <div className="min-h-screen bg-white flex flex-col items-center">
+            <div className="min-h-screen bg-white flex flex-col items-center text-black">
                 <div className="w-11/12">
                     <header>
                         <nav className="bg-white text-3xl">
@@ -79,7 +80,7 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
                             <ul>
                                 {lastTenPosts.map((x : any) => 
                                     <li key={x.id}>
-                                        <a href={`${x.id}`}>{x.title}</a>
+                                        <Link href={`${x.id}`}>{x.title}</Link>
                                     </li>
                                 )}
                             </ul>

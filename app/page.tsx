@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import bike from '../public/bike.png'
 import briefcase from '../public/briefcase.png'
@@ -31,7 +32,7 @@ const Box = (props) => {
                     onMouseOver={e => setShowLetter(true)} 
                     onMouseLeave={e => setShowLetter(false)}
                     onClick={(e) => setToggled(!toggled)}
-                    className={`${props.bgcolor} text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
+                    className={`${props.bgcolor} text-4xl md:text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
                 >
                     <div className="flex justify-center max-h-full">
                         {
@@ -42,12 +43,12 @@ const Box = (props) => {
         {
             toggled &&
                 <div 
-                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center overflow-scroll cursor-pointer`}
+                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-lg md:text-2xl items-center justify-center overflow-scroll cursor-pointer`}
                     style={props.gridDimensions}
                     onClick={(e) => setToggled(!toggled)}
                 >
                     <div className="w-3/4 space-y-8 animate-fadeIn max-h-full">
-                        <div className="flex flex-col justfiy-center">
+                        <div className="flex flex-col justfiy-center text-black">
                         {props.overlayText}
                         </div>
                     </div>
@@ -68,16 +69,16 @@ const Project = (props) => {
                     <div className="z-0 bg-white absolute w-full h-full top-0">
                         <div className="flex flex-col h-full">
                             <div className="h-2/3 flex flex-col items-center justify-center" />
-                            <div className="">
+                            <div className="text-black">
                                 <h4>{props.title}</h4>
                                 <p>{props.text}</p>
                             </div>
-                                <button 
+                                <Link
                                     className="bg-sky-600 hover:bg-white hover:text-blue-500 w-1/4 text-white border-2 border-sky-600 text-sm ease-in duration-200 p-1 self-center bottom-2 absolute"
-                                    onClick={(e) => {e.preventDefault(); window.location.href='/projects/'+props.project}}
+                                    href={`/projects/${props.project}`}
                                 >
                                     More info
-                                </button>
+                                </Link>
                         </div>
                     </div>
                 </div>
@@ -108,20 +109,20 @@ export default function Home() {
             <div className="lg:w-9/12 flex flex-col items-center">
 
 
-                <div className="h-screen w-full flex flex-col items-center">
+                <div className="md:h-screen w-full flex flex-col items-center">
 
-                    <nav className="min-w-full bg-black h-20 text-white">
-                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-2xl justify-center h-full items-center">
-                            <div className="border-x-4 border-white h-full flex items-center">Menu</div>
-                            <a href="/blog">Blog</a>
+                    <nav className="min-w-full bg-black text-white">
+                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-xl justify-center h-full items-center">
+                            <div className="border-x-4 border-white h-full flex items-center py-4">Menu</div>
+                            <Link href="/blog">Blog</Link>
                             <button onClick={scrollToProjects}>Projects</button>
                             <button onClick={scrollToAbout}>About</button>
                             <div><a href="mailto:omrrrrrrr@gmail.com">Contact</a></div>
                         </div>
                     </nav>
 
-                    <div className="h-full w-11/12 flex items-center">
-                        <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full h-3/4">
+                    <div className="h-full w-11/12 flex items-center py-10 md:py-0 bg-inherit">
+                        <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
                             <Box 
                                 letter="O" 
@@ -345,7 +346,7 @@ export default function Home() {
                                         src={Flower}
                                         alt="Going back to nature"
                                         style={{
-                                            width: "80%",
+                                            width: "70%",
                                         }}
                                     />
                                 }
@@ -389,16 +390,16 @@ export default function Home() {
                 <div className="border-t-2 border-x-2 border-black w-full">
                     <section className="bg-neutral-200 text-center flex lg:flex-row flex-col justify-center items-center">
                         <div className="w-3/5">
-                            <div className="text-4xl">
+                            <div className="text-xl md:text-4xl text-black">
                                 The Blog
                             </div>
-                            <div className="md:text-lg lg:text-xl mt-4">
+                            <div className="text-sm md:text-lg lg:text-xl mt-4 text-black">
                                 <p>I&apos;ve started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
                                 <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
-                                <a href="/blog">Click here to check out the blog list</a>
+                                <Link href="/blog">Click here to check out the blog list</Link>
                             </div>
                         </div>
-                        <div className="w-1/2 lg:w-fit">
+                        <div className="w-1/4 lg:w-fit">
                         <Image
                             src={Docker}
                             alt="Development Tools"
@@ -414,7 +415,7 @@ export default function Home() {
                                 alt="Planet Earth"
                             />
                             </div>
-                            <div className="text-lg md:text-xl lg:text-2xl ml-2">New Project coming later</div>
+                            <div className="text-md md:text-xl lg:text-2xl ml-2">More projects coming</div>
                         </div>
                     </section>
                     <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
@@ -467,14 +468,18 @@ export default function Home() {
                             />
                         </div>
                     </section>
-                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center" ref={aboutRef}>
-                        <h2 className="text-4xl p-2">
+                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center text-black" ref={aboutRef}>
+                        <h2 className="text-2xl md:text-4xl p-2">
                             About
                         </h2>
-                        <div className="text-md md:text-lg lg:text-xl w-2/3 mt-2">
+                        <div className="text-sm md:text-lg lg:text-xl w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
-                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I&apos;ve elected to use a different stack involving nextjs and GoLang. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it&apos;s obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we&apos;ll be completely obsolete as AI takes over :)</p>
+                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I&apos;ve elected to use a different stack involving nextjs and to make it static for now. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it&apos;s obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we&apos;ll be completely obsolete as AI takes over :)</p>
                             <p>My personal goals are to watch the world change into one big society that helps each other and to help be a part of that change.</p>
+                            <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle, although I do not wish to guilt anyone into following this. Some small changes that people can make are to eat less meat if you consume a lot and to be aware of how and how much you travel.</p>
+
+                            <p>The best thing that a person can do is to educate themselves.</p>
+                            <p>I hope to develop some projects in the future that can help to contribute to awareness and to help people. Right now my focus is still on developing myself.</p>
                         </div>
                     </section>
                     <footer>
