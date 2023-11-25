@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import bike from '../public/bike.png'
 import briefcase from '../public/briefcase.png'
+import ContactForm from './contactForm.jsx'
 import duffa from '../public/duffa-cropped.png'
 import Docker from '../public/docker.webp'
 import e from '../public/e.jpg'
@@ -87,6 +88,7 @@ const Project = (props) => {
 }
 
 export default function Home() {
+    const [modalOpenState, setModalOpenState] = useState(false)
     const [gridDimensions, setGridDimensions] = useState({width: '', height: ''})
     const projectRef = useRef(null)
     const aboutRef = useRef(null)
@@ -105,6 +107,11 @@ export default function Home() {
     },[])
 
     return (
+    <>
+
+       <ContactForm 
+           modalOpenStateHook={[modalOpenState, setModalOpenState]}
+       />
         <main className="flex min-h-screen flex-col items-center min-w-full">
             <div className="lg:w-9/12 flex flex-col items-center">
 
@@ -117,11 +124,11 @@ export default function Home() {
                             <Link href="/blog">Blog</Link>
                             <button onClick={scrollToProjects}>Projects</button>
                             <button onClick={scrollToAbout}>About</button>
-                            <div><a href="mailto:omrrrrrrr@gmail.com">Contact</a></div>
+                            <button onClick={() => setModalOpenState(true)}>Contact</button>
                         </div>
                     </nav>
 
-                    <div className="h-full w-full lg:w-11/12 flex items-center py-10 lg:py-0 bg-inherit">
+                    <div className="h-full w-full lg:w-11/12 flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
                         <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
                             <Box 
@@ -511,5 +518,6 @@ export default function Home() {
 
             </div>
         </main>
+    </>
     )
 }
