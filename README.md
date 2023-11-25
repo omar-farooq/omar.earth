@@ -4,11 +4,13 @@
 
 This is a NextJS app. Bring the application up using docker compose up -d
 
+The port used for the node development server is 3021. To view changes while developing visit http://localhost:3021
+
 ## About
 
 ### The site
 
-A basic blog site for tech challenges I face and want to document. Also a chance to utilise my skills with React, Terraform, AWS, GoLang
+A basic blog site for tech challenges I face and want to document. Also a chance to utilise my skills with React, Terraform, AWS, GoLang, Git and more
 
 ### Domain
 
