@@ -5,6 +5,7 @@ import { Crushed } from 'next/font/google'
 import { Libre_Baskerville } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const bitter = Bitter({
     weight: '600',
@@ -27,7 +28,7 @@ const bask = Libre_Baskerville({
     subsets: ['latin'],
 })
 
-export default function BlogPostLayout({ postData,lastTenPosts }) {
+export default function BlogPostLayout({ postData, lastTenPosts } : {postData:any, lastTenPosts:any}) {
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
 
     useEffect(() => {
@@ -53,7 +54,7 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
                 <div className={`mb-4 ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
             </div>
 
-            <div className="min-h-screen bg-white flex flex-col items-center">
+            <div className="min-h-screen bg-white flex flex-col items-center text-black">
                 <div className="w-11/12">
                     <header>
                         <nav className="bg-white text-3xl">
@@ -77,9 +78,9 @@ export default function BlogPostLayout({ postData,lastTenPosts }) {
                         <div className="md:w-1/4 flex flex-col items-center text-center md:mt-0 mt-10">
                             <h4 className="text-2xl">Recent Posts</h4>
                             <ul>
-                                {lastTenPosts.map(x => 
-                                    <li>
-                                        <a href={`${x.id}`}>{x.title}</a>
+                                {lastTenPosts.map((x : any) => 
+                                    <li key={x.id}>
+                                        <Link href={`${x.id}`}>{x.title}</Link>
                                     </li>
                                 )}
                             </ul>

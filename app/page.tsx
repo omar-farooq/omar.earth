@@ -1,8 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import bike from '../public/bike.png'
 import briefcase from '../public/briefcase.png'
+import ContactForm from './contactForm.jsx'
 import duffa from '../public/duffa-cropped.png'
 import Docker from '../public/docker.webp'
 import e from '../public/e.jpg'
@@ -31,7 +33,7 @@ const Box = (props) => {
                     onMouseOver={e => setShowLetter(true)} 
                     onMouseLeave={e => setShowLetter(false)}
                     onClick={(e) => setToggled(!toggled)}
-                    className={`${props.bgcolor} text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
+                    className={`${props.bgcolor} text-4xl md:text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
                 >
                     <div className="flex justify-center max-h-full">
                         {
@@ -42,12 +44,12 @@ const Box = (props) => {
         {
             toggled &&
                 <div 
-                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-2xl items-center justify-center overflow-scroll cursor-pointer`}
+                    className={`absolute bg-white border-8 ${props.bordercolor} z-9999 animate-spread flex text-center text-lg md:text-2xl items-center justify-center overflow-scroll cursor-pointer`}
                     style={props.gridDimensions}
                     onClick={(e) => setToggled(!toggled)}
                 >
                     <div className="w-3/4 space-y-8 animate-fadeIn max-h-full">
-                        <div className="flex flex-col justfiy-center">
+                        <div className="flex flex-col justfiy-center text-black">
                         {props.overlayText}
                         </div>
                     </div>
@@ -68,16 +70,16 @@ const Project = (props) => {
                     <div className="z-0 bg-white absolute w-full h-full top-0">
                         <div className="flex flex-col h-full">
                             <div className="h-2/3 flex flex-col items-center justify-center" />
-                            <div className="">
+                            <div className="text-black">
                                 <h4>{props.title}</h4>
                                 <p>{props.text}</p>
                             </div>
-                                <button 
+                                <Link
                                     className="bg-sky-600 hover:bg-white hover:text-blue-500 w-1/4 text-white border-2 border-sky-600 text-sm ease-in duration-200 p-1 self-center bottom-2 absolute"
-                                    onClick={(e) => {e.preventDefault(); window.location.href='/projects/'+props.project}}
+                                    href={`/projects/${props.project}`}
                                 >
                                     More info
-                                </button>
+                                </Link>
                         </div>
                     </div>
                 </div>
@@ -86,6 +88,7 @@ const Project = (props) => {
 }
 
 export default function Home() {
+    const [modalOpenState, setModalOpenState] = useState(false)
     const [gridDimensions, setGridDimensions] = useState({width: '', height: ''})
     const projectRef = useRef(null)
     const aboutRef = useRef(null)
@@ -104,24 +107,29 @@ export default function Home() {
     },[])
 
     return (
+    <>
+
+       <ContactForm 
+           modalOpenStateHook={[modalOpenState, setModalOpenState]}
+       />
         <main className="flex min-h-screen flex-col items-center min-w-full">
             <div className="lg:w-9/12 flex flex-col items-center">
 
 
-                <div className="h-screen w-full flex flex-col items-center">
+                <div className="lg:h-screen w-full flex flex-col items-center bg-white md:bg-inherit">
 
-                    <nav className="min-w-full bg-black h-20 text-white">
-                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-2xl justify-center h-full items-center">
-                            <div className="border-x-4 border-white h-full flex items-center">Menu</div>
-                            <a href="/blog">Blog</a>
+                    <nav className="min-w-full bg-black text-white">
+                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-xl justify-center h-full items-center">
+                            <div className="border-x-4 border-white h-full flex items-center py-4">Menu</div>
+                            <Link href="/blog">Blog</Link>
                             <button onClick={scrollToProjects}>Projects</button>
                             <button onClick={scrollToAbout}>About</button>
-                            <div><a href="mailto:omrrrrrrr@gmail.com">Contact</a></div>
+                            <button onClick={() => setModalOpenState(true)}>Contact</button>
                         </div>
                     </nav>
 
-                    <div className="h-full w-11/12 flex items-center">
-                        <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full h-3/4">
+                    <div className="h-full w-full lg:w-11/12 flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
+                        <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
                             <Box 
                                 letter="O" 
@@ -155,7 +163,7 @@ export default function Home() {
                                     />
                                 } 
                                 overlayText={
-                                    <><p>Since the early internet, everyone has used the web for cat pictures and conspiracy theories. I will give my personal favourite based on what I've read:</p><p>Several years ago I read in the Telegraph that someone had claimed in an East Asian country that they are able to create clones. They are not legally allowed to create human clones but they can successfully clone peoples pets. They claimed that they've tried human cloning and it's successful. I think someone has clones running around or maybe they're harvesting them for organs or as slaves.</p></>
+                                    <><p>Since the early internet, everyone has used the web for cat pictures and conspiracy theories. I will give my personal favourite based on what I&apos;ve read:</p><p>Several years ago I read in the Telegraph that someone had claimed in an East Asian country that they are able to create clones. They are not legally allowed to create human clones but they can successfully clone peoples pets. They claimed that they&apos;ve tried human cloning and it&apos;s successful. I think someone has clones running around or maybe they&apos;re harvesting them for organs or as slaves.</p></>
                                 } 
                             />
 
@@ -169,14 +177,14 @@ export default function Home() {
                                         src={PalmTree}
                                         alt="where I'm from"
                                         style={{
-                                            width: "80%"
+                                            width: "60%"
                                         }}
                                     />
                                 }
                                 overlayText={
                                     <>
-                                        <p>I come from Manchester, UK where it's always sunny and never rains</p>
-                                        <p>Mark Twain said "I would like to live in Manchester England, the transition between Manchester and death would be unnoticeable"</p>
+                                        <p>I come from Manchester, UK where it&apos;s always sunny and never rains</p>
+                                        <p>Mark Twain said &quot;I would like to live in Manchester England, the transition between Manchester and death would be unnoticeable&quot;</p>
                                     </>
                                 }
                             />
@@ -190,16 +198,16 @@ export default function Home() {
                                         src={briefcase}
                                         alt="night shift"
                                         style={{
-                                            width: "100%"
+                                            width: "50%"
                                         }}
                                     />
                                 }
                                 overlayText={
                                     <>
                                         <p>For a year, my job involved doing a night shift for which I had to sleep during the days and alter my sleeping pattern</p>
-                                        <p>How I did this was sleep as soon as I came home. Sometimes I'd want to do something in the evening like go swimming or play ultimate, or something would wake me up, which meant that I'd only get 4 or 5 hours sleep. I would then sleep for a few hours before work to try and catch up on sleep</p>
-                                        <p>In terms of eating, my pattern was messed up in that I'd have breakfast when I woke up in the evening, half my dinner before a nap (If I had a nap), the other half after a nap and lunch when I got home from work.</p>
-                                        <p>I did have to give it up in the end because I couldn't keep it up for longer than a year</p>
+                                        <p>How I did this was sleep as soon as I came home. Sometimes I&apos;d want to do something in the evening like go swimming or play ultimate, or something would wake me up, which meant that I&apos;d only get 4 or 5 hours sleep. I would then sleep for a few hours before work to try and catch up on sleep</p>
+                                        <p>In terms of eating, my pattern was messed up in that I&apos;d have breakfast when I woke up in the evening, half my dinner before a nap (If I had a nap), the other half after a nap and lunch when I got home from work.</p>
+                                        <p>I did have to give it up in the end because I couldn&apos;t keep it up for longer than a year</p>
                                     </>
                                 }
                             />
@@ -219,9 +227,9 @@ export default function Home() {
                                 }
                                 overlayText={
                                     <>
-                                        <p>Many years ago we were being taught at school that various things were predicted for the future: such as increased storms, droughts and flooding due to a phenomena known as "global warming"</p>
+                                        <p>Many years ago we were being taught at school that various things were predicted for the future: such as increased storms, droughts and flooding due to a phenomena known as &quot;global warming&quot;</p>
                                         <p>A lot of people laughed this off as an exaggerated dystopian prediction, and people still do but there is a lot of physical evidence as well as all the previous predictions coming true</p>
-                                        <p>I ride my bike everywhere and don't own a car. It might seem excessive but I think it's important for everyone to sacrifice something in order to make the world liveable. I don't think that's going to happen judging by history and human nature...</p>
+                                        <p>I ride my bike everywhere and don&apos;t own a car. It might seem excessive but I think it&apos;s important for everyone to sacrifice something in order to make the world liveable. I don&apos;t think that&apos;s going to happen judging by history and human nature...</p>
                                     </>
                                 }
                             />
@@ -235,7 +243,7 @@ export default function Home() {
                                         src={reel}
                                         alt="Greatest Films"
                                         style={{
-                                            width: "80%"
+                                            width: "60%"
                                         }}
                                     />
                                 }
@@ -285,8 +293,8 @@ export default function Home() {
                                 }
                                 overlayText={
                                     <>
-                                        <p>I qualified as a Mathematician, although I don't practice it thanks to my jobs in tech.</p>
-                                        <p>My favourite subject from studying mathematics was relativity. It was easily the most interesting as you could see its practical applications, but also the mathematical logic behind it was some of the most advanced I've ever seen.</p>
+                                        <p>I qualified as a Mathematician, although I don&apos;t practice it thanks to my jobs in tech.</p>
+                                        <p>My favourite subject from studying mathematics was relativity. It was easily the most interesting as you could see its practical applications, but also the mathematical logic behind it was some of the most advanced I&apos;ve ever seen.</p>
                                         <p>The most interesting piece of math philosophy has to be the idea that the number pi, an infinite number, could contain every single piece of information that has, does and will ever exist. It is thought to contain everything from the world we live in to an alternate world where everything but me exists (I know, tragedy.)</p>
                                         <p>I guess the most interesting thing would be if I could search it and find out what a world without me would be like. What would be impossible is to try and find out the future since there are probably versions of my life within it where I died yesterday, last week etc.</p>
                                     </>
@@ -302,14 +310,14 @@ export default function Home() {
                                         src={heart}
                                         alt="what I love"
                                         style={{
-                                            width: "80%"
+                                            width: "50%"
                                         }}
                                     />
                                 }
                                 overlayText={
                                     <>
                                         <p>A world without war and conflict and separation would be my ideal. Greed would also have to go.</p>
-                                        <p>From what I've seen, the people who are in a position to make changes to benefit others have the mindset of 'I had to struggle, so everyone else should' or 'The system works for me so it seems fine'. No one seems to be voting for change either which is strange to me.</p>
+                                        <p>From what I&apos;ve seen, the people who are in a position to make changes to benefit others have the mindset of &apos;I had to struggle, so everyone else should&apos; or &apos;The system works for me so it seems fine&apos;. No one seems to be voting for change either which is strange to me.</p>
                                     </>
                                 }
                             />
@@ -323,15 +331,15 @@ export default function Home() {
                                         src={Triforce}
                                         alt="Best game of all time"
                                         style={{
-                                            width: "100%"
+                                            width: "50%"
                                         }}
                                     />
                                 }
                                 overlayText={
                                     <>
                                         <p>For me Ocarina of Time is the greatest game ever.</p>
-                                        <p>I haven't played many video games since which have come close and playing such a game so young perhaps killed my love of video games since it's hard to find a game that matches upto it and keeps my interest.</p>
-                                        <p>I still think the Zelda series is great and love the new games that come out from the series. The switch games in a higher resolution are gorgeous and are how I imagined the N64 games were when playing them, but there's still an element from the older games that's missing.</p>
+                                        <p>I haven&apos;t played many video games since which have come close and playing such a game so young perhaps killed my love of video games since it&apos;s hard to find a game that matches upto it and keeps my interest.</p>
+                                        <p>I still think the Zelda series is great and love the new games that come out from the series. The switch games in a higher resolution are gorgeous and are how I imagined the N64 games were when playing them, but there&apos;s still an element from the older games that&apos;s missing.</p>
                                     </>
                                 }
                             />
@@ -345,7 +353,7 @@ export default function Home() {
                                         src={Flower}
                                         alt="Going back to nature"
                                         style={{
-                                            width: "80%",
+                                            width: "70%",
                                         }}
                                     />
                                 }
@@ -354,7 +362,7 @@ export default function Home() {
                                         <p>I had the interesting experience of going to various places in France and doing some organic farm work (voluntarily). One thing that I found is that everyone seems to have a different situation regarding the land that they worked on. Some people bought it, some inherited, some rented.</p>
                                         <p>The nicest I did work on was some guy who had worked hard for his land and appreciated doing minimal work.</p>
                                         <p>The worst was someone who was stressed out about working fast and she rented her land.</p>
-                                        <p>It made me think about land ownership and how stupid it all really is. We're an exponentially growing population - how can you put a monetary value on something that is finite that is required by everyone? Why not just own property but not the land itself?</p>
+                                        <p>It made me think about land ownership and how stupid it all really is. We&apos;re an exponentially growing population - how can you put a monetary value on something that is finite that is required by everyone? Why not just own property but not the land itself?</p>
                                     </>
                                 }
                             />
@@ -368,15 +376,15 @@ export default function Home() {
                                         src={Water}
                                         alt="Eating Healthy"
                                         style={{
-                                            width: "100%",
+                                            width: "70%",
                                         }}
                                     />
                                 }
                                 overlayText={
                                     <>
-                                        <p>I try to avoid anything with refined sugar in it. For quite a while I have avoided drinking anything but water. It's become quite apparent that sugar is the cause of a lot of health problems and I've been taught this from a young age</p>
-                                        <p>Since I feel that knowing this has really helped me in life, I will try to pass it on as well as saying that fish is really good, avoid eating too much meat, chips are bland without ketchup and mayo and there's a lot of healthy food which is more appetising</p>
-                                        <p>A lot of people say that things are ok in moderation but I don't believe in that theory. I think that a lot of the things we consume in 'moderation' is doing damage that takes longer to recover from than moderation allows for (whatever that even means - moderation is quite subjective).</p>
+                                        <p>I try to avoid anything with refined sugar in it. For quite a while I have avoided drinking anything but water. It&apos;s become quite apparent that sugar is the cause of a lot of health problems and I&apos;ve been taught this from a young age</p>
+                                        <p>Since I feel that knowing this has really helped me in life, I will try to pass it on as well as saying that fish is really good, avoid eating too much meat, chips are bland without ketchup and mayo and there&apos;s a lot of healthy food which is more appetising</p>
+                                        <p>A lot of people say that things are ok in moderation but I don&apos;t believe in that theory. I think that a lot of the things we consume in &lsquo;moderation&rsquo; is doing damage that takes longer to recover from than moderation allows for (whatever that even means - moderation is quite subjective).</p>
                                         <p>I can eat fruit every day, really enjoy it and not get fat, so why would I resort to eating crisps and chocolate which is nowhere near as refreshing?</p>
                                     </>
                                 }
@@ -387,18 +395,18 @@ export default function Home() {
                 </div>
 
                 <div className="border-t-2 border-x-2 border-black w-full">
-                    <section className="bg-neutral-200 text-center flex lg:flex-row flex-col justify-center items-center">
-                        <div className="w-3/5">
-                            <div className="text-4xl">
+                    <section className="bg-neutral-200 text-center flex md:flex-row flex-col justify-center items-center">
+                        <div className="w-3/5 my-4">
+                            <div className="text-xl md:text-4xl text-black">
                                 The Blog
                             </div>
-                            <div className="md:text-lg lg:text-xl mt-4">
-                                <p>I've started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
+                            <div className="text-sm md:text-lg lg:text-xl mt-4 text-black">
+                                <p>I&apos;ve started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
                                 <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
-                                <a href="/blog">Click here to check out the blog list</a>
+                                <Link href="/blog">Click here to check out the blog list</Link>
                             </div>
                         </div>
-                        <div className="w-1/2 lg:w-fit">
+                        <div className="w-1/4 lg:w-fit">
                         <Image
                             src={Docker}
                             alt="Development Tools"
@@ -414,7 +422,7 @@ export default function Home() {
                                 alt="Planet Earth"
                             />
                             </div>
-                            <div className="text-lg md:text-xl lg:text-2xl ml-2">New Project coming later</div>
+                            <div className="text-md md:text-xl lg:text-2xl ml-2">More projects coming</div>
                         </div>
                     </section>
                     <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
@@ -427,6 +435,7 @@ export default function Home() {
                                 image={
                                     <Image 
                                         src={zah} 
+                                        alt="Screenshot of a project for a housing co-op"
                                         style={{
                                             height: "100%",
                                             width: "100%"
@@ -441,6 +450,7 @@ export default function Home() {
                                 image={
                                     <Image 
                                         src={duffa} 
+                                        alt="Screenshot of a website for an ultimate frisbee group"
                                         style={{
                                             height: "100%",
                                             width: "100%"
@@ -455,6 +465,7 @@ export default function Home() {
                                 image={
                                     <Image 
                                         src={simpsonstv}
+                                        alt="Screenshot of a Simpsons website I made"
                                         style={{
                                             height: "100%",
                                             width: "100%"
@@ -464,14 +475,18 @@ export default function Home() {
                             />
                         </div>
                     </section>
-                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center" ref={aboutRef}>
-                        <h2 className="text-4xl p-2">
+                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center text-black" ref={aboutRef}>
+                        <h2 className="text-2xl md:text-4xl p-2">
                             About
                         </h2>
-                        <div className="text-md md:text-lg lg:text-xl w-2/3 mt-2">
+                        <div className="text-sm md:text-lg lg:text-xl w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
-                            <p>I've re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I've elected to use a different stack involving nextjs and GoLang. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it's obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we'll be completely obsolete as AI takes over :)</p>
+                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I&apos;ve elected to use a different stack involving nextjs and to make it static for now. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it&apos;s obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we&apos;ll be completely obsolete as AI takes over :)</p>
                             <p>My personal goals are to watch the world change into one big society that helps each other and to help be a part of that change.</p>
+                            <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle, although I do not wish to guilt anyone into following this. Some small changes that people can make are to eat less meat if you consume a lot and to be aware of how and how much you travel.</p>
+
+                            <p>The best thing that a person can do is to educate themselves.</p>
+                            <p>I hope to develop some projects in the future that can help to contribute to awareness and to help people. Right now my focus is still on developing myself.</p>
                         </div>
                     </section>
                     <footer>
@@ -479,6 +494,7 @@ export default function Home() {
                             <a href="https://github.com/omar-farooq" target="_blank">
                             <Image 
                                 src={GithubIcon}
+                                alt="Click to visit my Github page"
                                 style={{
                                     height: "80px",
                                     width: "80px"
@@ -489,6 +505,7 @@ export default function Home() {
                             <a href="mailto:omrrrrrrr@gmail.com">
                             <Image 
                                 src={Email}
+                                alt="Click to email me"
                                 style={{
                                     height: "80px",
                                     width: "80px"
@@ -501,5 +518,6 @@ export default function Home() {
 
             </div>
         </main>
+    </>
     )
 }

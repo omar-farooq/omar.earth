@@ -1,4 +1,4 @@
-import { getProjectData } from '../../../lib/projects';
+import { getProjectData, getAllProjects } from '../../../lib/projects';
 import { Bitter } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
@@ -13,6 +13,14 @@ const montserrat = Montserrat({
     subsets: ['latin'],
 })
 
+export async function generateStaticParams() {
+    const projects = await getAllProjects()
+
+    return projects.map(project => ({
+        slug: project.params.slug,
+    }))
+}
+
 export default async function Project({ params }) {
     const projectData = await getProjectData(params.slug)
     return (
@@ -24,6 +32,7 @@ export default async function Project({ params }) {
                     </h2>
                     <Image
                         src={projectData.image}
+                        alt="Screenshot of my project"
                         width="1000"
                         height="1000"
                     />
