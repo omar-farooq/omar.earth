@@ -3,7 +3,7 @@ title: 'Setting up my development environment'
 date: '2023-10-15'
 series: 'recreating my website'
 part: '1'
-backgroundImage: 'whale.webp'
+backgroundImage: 'whale.jpeg'
 shortDescription: 'why I remade the website, how I remade it and the challenges involved'
 ---
 

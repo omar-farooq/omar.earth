@@ -34,6 +34,7 @@ const Box = (props) => {
                     onMouseLeave={e => setShowLetter(false)}
                     onClick={(e) => setToggled(!toggled)}
                     className={`${props.bgcolor} text-4xl md:text-8xl text-center flex justify-center items-center text-red-300 cursor-pointer`}
+                    style={{minHeight: '140px'}}
                 >
                     <div className="flex justify-center max-h-full">
                         {
@@ -479,10 +480,17 @@ export default function Home() {
                         <h2 className="text-2xl md:text-4xl p-2">
                             About
                         </h2>
-                        <div className="text-sm md:text-lg lg:text-xl w-2/3 mt-2">
+                        <div className="text-sm md:text-lg lg:text-lg w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
-                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I&apos;ve elected to use a different stack involving nextjs and to make it static for now. When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it&apos;s obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we&apos;ll be completely obsolete as AI takes over :)</p>
+
+                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I originally made this website a few years ago in the exact same way but with pure html, css, jquery and php. This time I&apos;ve elected to use a different stack involving nextjs and to make it mostly static for now with a GoLang function involved. I had to search for a web hosting service last time and managed to find one which is free, but I'm using AWS for this site.</p> 
+
+                            <p>When I made the website previously, I wondered if JQuery would become obsolete eventually as it was revolutionary for a while, but now it&apos;s obsolete in the same way that guestbooks and midi players are on all websites. Perhaps one day soon we&apos;ll be completely obsolete as AI takes over :)</p>
+
+                            <p>The site isn&apos;t designed to look professional or incredibly beautiful, it was a design that I made for me as a throwback to how personal sites in the early internet were, mixed as an SPA using modern javascript</p>
+
                             <p>My personal goals are to watch the world change into one big society that helps each other and to help be a part of that change.</p>
+
                             <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle, although I do not wish to guilt anyone into following this. Some small changes that people can make are to eat less meat if you consume a lot and to be aware of how and how much you travel.</p>
 
                             <p>The best thing that a person can do is to educate themselves.</p>
