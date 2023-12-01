@@ -113,22 +113,25 @@ export default function Home() {
        <ContactForm 
            modalOpenStateHook={[modalOpenState, setModalOpenState]}
        />
-        <main className="flex min-h-screen flex-col items-center min-w-full">
+        <main className="flex min-h-screen flex-col items-center min-w-full" style={{backgroundColor:"#edeaea"}}>
             <div className="lg:w-9/12 flex flex-col items-center">
 
 
                 <div className="lg:h-screen w-full flex flex-col items-center bg-white md:bg-inherit">
 
-                    <nav className="min-w-full bg-black text-white">
-                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-xl justify-center h-full items-center">
-                            <div className="border-x-4 border-white h-full flex items-center py-4">Menu</div>
-                            <Link href="/blog">Blog</Link>
-                            <button onClick={scrollToProjects}>Projects</button>
-                            <button onClick={scrollToAbout}>About</button>
-                            <button onClick={() => setModalOpenState(true)}>Contact</button>
+                    <nav className="min-w-full text-zinc-700 md:absolute mt-3 md:mt-0 h-8 lg:h-16 flex items-center">
+                        <div className="w-full flex justify-center">
+                            <div className="flex flex-row justify-center lg:justify-between text-xl md:text-3xl w-11/12">
+                                <div className="hidden lg:block text-6xl">omar.</div>
+                                <div className="flex flex-row gap-x-4 md:text-2xl text-xl justify-center h-full items-center">
+                                    <Link href="/blog">Blog</Link>
+                                    <button onClick={scrollToProjects}>Projects</button>
+                                    <button onClick={scrollToAbout}>About</button>
+                                    <button onClick={() => setModalOpenState(true)}>Contact</button>
+                                </div>
+                            </div>
                         </div>
                     </nav>
-
                     <div className="h-full w-full lg:w-11/12 flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
                         <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
