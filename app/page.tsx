@@ -114,21 +114,122 @@ export default function Home() {
            modalOpenStateHook={[modalOpenState, setModalOpenState]}
        />
         <main className="flex min-h-screen flex-col items-center min-w-full">
-            <div className="lg:w-9/12 flex flex-col items-center">
 
 
                 <div className="lg:h-screen w-full flex flex-col items-center bg-white md:bg-inherit">
 
-                    <nav className="min-w-full bg-black text-white">
-                        <div className="flex flex-row gap-x-3 lg:text-4xl md:text-3xl text-xl justify-center h-full items-center">
-                            <div className="border-x-4 border-white h-full flex items-center py-4">Menu</div>
-                            <Link href="/blog">Blog</Link>
-                            <button onClick={scrollToProjects}>Projects</button>
-                            <button onClick={scrollToAbout}>About</button>
-                            <button onClick={() => setModalOpenState(true)}>Contact</button>
+                    <nav className="min-w-full text-white absolute backdrop-blur-lg lg:h-16 flex items-center">
+                        <div className="w-full flex justify-center">
+                            <div className="flex flex-row justify-center lg:justify-between text-xl md:text-3xl w-11/12">
+                                <div className="hidden lg:block text-5xl">omar.earth</div>
+                                <div className="flex flex-row gap-x-4 md:text-2xl text-xl justify-center h-full items-center">
+                                    <Link href="/blog">Blog</Link>
+                                    <button onClick={scrollToProjects}>Projects</button>
+                                    <button onClick={scrollToAbout}>About</button>
+                                    <button onClick={() => setModalOpenState(true)}>Contact</button>
+                                </div>
+                            </div>
                         </div>
                     </nav>
 
+                    <div 
+                        className="min-w-full max-h-screen h-screen bg-no-repeat bg-cover" 
+                        style={{backgroundImage: `url(/holdingearth.jpeg)`}}
+                    >
+                        <div className="h-full flex flex-col justify-center items-center text-white">
+                            <div className="text-8xl bg-black"><span className="text-cyan-600">Save</span> or <span className="text-red-600">Destroy</span></div> 
+                            <div className="bg-black text-6xl">Click to decide</div>
+                        </div>
+                        <div className="absolute bottom-0 bg-black text-white w-full text-center lg:text-2xl">web development with AI imagery to develop the future</div>
+                    </div>
+                </div>
+            <div className="lg:w-9/12 flex flex-col items-center">
+
+                <div className="border-t-2 border-x-2 border-black w-full">
+                    <section className="bg-neutral-200 text-center flex md:flex-row flex-col justify-center items-center">
+                        <div className="w-3/5 my-4">
+                            <div className="text-xl md:text-4xl text-black">
+                                The Blog
+                            </div>
+                            <div className="text-sm md:text-lg lg:text-xl mt-4 text-black">
+                                <p>I&apos;ve started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
+                                <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
+                                <Link href="/blog">Click here to check out the blog list</Link>
+                            </div>
+                        </div>
+                        <div className="w-1/4 lg:w-fit">
+                        <Image
+                            src={Docker}
+                            alt="Development Tools"
+                        />
+                        </div>
+                    </section>
+                    <section className="bg-black text-white">
+                        <div className="flex flex-row justify-center items-center">
+                            <div className="text-xl md:text-2xl lg:text-5xl mr-2">save the <span className="text-green-700">.earth</span></div>
+                            <div className="w-12 md:w-16 lg:w-24">
+                            <Image
+                                src={Earth}
+                                alt="Planet Earth"
+                            />
+                            </div>
+                            <div className="text-md md:text-xl lg:text-2xl ml-2">More projects coming</div>
+                        </div>
+                    </section>
+                    <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
+                        <h2 className="text-rose-200 text-4xl p-2">Projects</h2>
+                        <div className="flex flex-row flex-wrap items-center justify-center w-full">
+                            <Project 
+                                title="zah" 
+                                project="zah"
+                                text="Housing Co-Op website" 
+                                image={
+                                    <Image 
+                                        src={zah} 
+                                        alt="Screenshot of a project for a housing co-op"
+                                        style={{
+                                            height: "100%",
+                                            width: "100%"
+                                        }}
+                                    />
+                                }
+                            />
+                            <Project 
+                                title="Duffa" 
+                                text="Ultimate Frisbee Group"
+                                project="duffa"
+                                image={
+                                    <Image 
+                                        src={duffa} 
+                                        alt="Screenshot of a website for an ultimate frisbee group"
+                                        style={{
+                                            height: "100%",
+                                            width: "100%"
+                                        }}
+                                    />
+                                }
+                            />
+                            <Project 
+                                title="simpsonstv.net" 
+                                project="simpsonstv"
+                                text="Website I made for the Simpsons when I was younger" 
+                                image={
+                                    <Image 
+                                        src={simpsonstv}
+                                        alt="Screenshot of a Simpsons website I made"
+                                        style={{
+                                            height: "100%",
+                                            width: "100%"
+                                        }}
+                                    />
+                                }
+                            />
+                        </div>
+                    </section>
+                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center text-black" ref={aboutRef}>
+                        <h2 className="text-2xl md:text-4xl p-2">
+                            About
+                        </h2>
                     <div className="h-full w-full lg:w-11/12 flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
                         <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
@@ -393,93 +494,6 @@ export default function Home() {
                         </div>
                     </div>
 
-                </div>
-
-                <div className="border-t-2 border-x-2 border-black w-full">
-                    <section className="bg-neutral-200 text-center flex md:flex-row flex-col justify-center items-center">
-                        <div className="w-3/5 my-4">
-                            <div className="text-xl md:text-4xl text-black">
-                                The Blog
-                            </div>
-                            <div className="text-sm md:text-lg lg:text-xl mt-4 text-black">
-                                <p>I&apos;ve started a new tech blog to help remind myself of my tech journey and to help others who may stumble across it.</p>
-                                <p>In my first blog series I dicuss why I remade the website, how I remade it and the challenges involved. I start off with discussing my development environment.</p>
-                                <Link href="/blog">Click here to check out the blog list</Link>
-                            </div>
-                        </div>
-                        <div className="w-1/4 lg:w-fit">
-                        <Image
-                            src={Docker}
-                            alt="Development Tools"
-                        />
-                        </div>
-                    </section>
-                    <section className="bg-black text-white">
-                        <div className="flex flex-row justify-center items-center">
-                            <div className="text-xl md:text-2xl lg:text-5xl mr-2">save the <span className="text-green-700">.earth</span></div>
-                            <div className="w-12 md:w-16 lg:w-24">
-                            <Image
-                                src={Earth}
-                                alt="Planet Earth"
-                            />
-                            </div>
-                            <div className="text-md md:text-xl lg:text-2xl ml-2">More projects coming</div>
-                        </div>
-                    </section>
-                    <section className="bg-orange-800 text-center" id="projects" ref={projectRef}>
-                        <h2 className="text-rose-200 text-4xl p-2">Projects</h2>
-                        <div className="flex flex-row flex-wrap items-center justify-center w-full">
-                            <Project 
-                                title="zah" 
-                                project="zah"
-                                text="Housing Co-Op website" 
-                                image={
-                                    <Image 
-                                        src={zah} 
-                                        alt="Screenshot of a project for a housing co-op"
-                                        style={{
-                                            height: "100%",
-                                            width: "100%"
-                                        }}
-                                    />
-                                }
-                            />
-                            <Project 
-                                title="Duffa" 
-                                text="Ultimate Frisbee Group"
-                                project="duffa"
-                                image={
-                                    <Image 
-                                        src={duffa} 
-                                        alt="Screenshot of a website for an ultimate frisbee group"
-                                        style={{
-                                            height: "100%",
-                                            width: "100%"
-                                        }}
-                                    />
-                                }
-                            />
-                            <Project 
-                                title="simpsonstv.net" 
-                                project="simpsonstv"
-                                text="Website I made for the Simpsons when I was younger" 
-                                image={
-                                    <Image 
-                                        src={simpsonstv}
-                                        alt="Screenshot of a Simpsons website I made"
-                                        style={{
-                                            height: "100%",
-                                            width: "100%"
-                                        }}
-                                    />
-                                }
-                            />
-                        </div>
-                    </section>
-                    <section className="bg-white border-t-2 border-black text-center flex flex-col items-center justify-center text-black" ref={aboutRef}>
-                        <h2 className="text-2xl md:text-4xl p-2">
-                            About
-                        </h2>
                         <div className="text-sm md:text-lg lg:text-lg w-2/3 mt-2">
                             <p>My name is Omar and I enjoy developing websites and putting them online.</p>
 
