@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '../../lib/posts';
 import { Crushed } from 'next/font/google';
+import BaseLayout from '@/src/baseLayout.tsx'
 
 const crushed = Crushed({
     weight: '400',
@@ -14,13 +15,11 @@ export default async function BlogList() {
     return (
 
         <>
-            <div className="min-h-screen bg-white flex justify-center text-black">
+            <BaseLayout>
+            <div className="flex justify-center text-black">
                 <div className="w-11/12">
                     <header>
-                        <nav className="text-3xl">
-                            <a href="/">omar.earth</a>
-                        </nav>
-                        <div className={`bg-white ${crushed.className} text-8xl`}>
+                        <div className={`${crushed.className} text-8xl`}>
                             Blog List
                         </div>
                     </header>
@@ -37,6 +36,7 @@ export default async function BlogList() {
                     </section>
                 </div>
             </div>
+            </BaseLayout>
         </>
     );
 }
