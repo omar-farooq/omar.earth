@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '../../lib/posts';
 import { Crushed } from 'next/font/google';
-import BaseLayout from '@/src/baseLayout.tsx'
+import BaseLayout from '@/app/baseLayout.tsx'
 
 const crushed = Crushed({
     weight: '400',

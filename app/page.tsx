@@ -1,11 +1,11 @@
 'use client';
 import { Rubik_Glitch } from 'next/font/google'
 import cyborg from '@/public/naturalcyborg.png'
-import BaseLayout from '@/src/baseLayout.tsx'
+import BaseLayout from '@/app/baseLayout.tsx'
 import Earth from '../public/earth.jpeg'
 import GithubIcon from '../public/github-icon.png'
 import Image from 'next/image'
-import ProjectList from '@/src/projectList.tsx'
+import ProjectList from './projectList.tsx'
 
 const rubik = Rubik_Glitch({
     weight: '400',
@@ -19,8 +19,8 @@ export default function Home() {
 
             <BaseLayout>
 
-                <div className="flex flex-row">
-                    <div className={`${rubik.className} text-9xl mt-20 w-1/3`}>
+                <div className="flex flex-col md:flex-row">
+                    <div className={`${rubik.className} text-4xl md:text-9xl md:mt-20 text-center md:w-1/3`}>
                         let&apos;s <span className="text-green-300">rewrite</span> history
                     </div>
                     <div>

@@ -35,7 +35,7 @@ const Project = (props) => {
 export default function ProjectList() {
     return (
         <>
-            <section className="bg-neutral-100 text-center mt-12" id="projects">
+            <section className="bg-neutral-100 text-center" id="projects">
                 <h2 className="text-black text-4xl p-2">Projects</h2>
                 <div className="flex flex-row flex-wrap items-center justify-center w-full">
                     <Project

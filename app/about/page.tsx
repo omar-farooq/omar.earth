@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react'
-import BaseLayout from '@/src/baseLayout.tsx'
+import BaseLayout from '@/app/baseLayout.tsx'
 import Image from 'next/image'
 import bike from '@/public/bike.png'
 import briefcase from '@/public/briefcase.png'

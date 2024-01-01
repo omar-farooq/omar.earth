@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import ContactForm from '@/src/contactForm.jsx'
+import ContactForm from './contactForm.jsx'
 
 export default function BaseLayout({
 	children,
