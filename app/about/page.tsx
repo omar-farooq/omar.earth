@@ -69,7 +69,7 @@ export default function About() {
 
 	return (
 		<BaseLayout>
-                    <section className="text-center flex flex-col items-center justify-center text-black min-h-screen -mt-8">
+                    <section className="text-center flex flex-col items-center justify-center text-black min-h-screen -mt-8 rotate-90 sm:rotate-0">
                         <div className="h-full w-full flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
                             <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
 
@@ -334,7 +334,7 @@ export default function About() {
                             </div>
                         </div>
                     </section>
-                    <section className="bg-neutral-100 border-black text-center flex flex-col items-center justify-center text-black mt-8">
+                    <section className="bg-stone-100 border-black text-center flex flex-col items-center justify-center text-black mt-8">
                         <h2 className="text-2xl md:text-4xl p-2">
                             About the site
                         </h2>
