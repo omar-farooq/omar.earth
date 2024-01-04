@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Sora } from 'next/font/google'
-import ContactForm from './contactForm.jsx'
+import ContactFormModal from './contactFormModal.jsx'
 import Link from 'next/link'
 import MobileNav from './MobileNav.tsx'
 
@@ -19,7 +19,7 @@ export default function BaseLayout({
     const [navOpenState, setNavOpenState] = useState(false)
     return (       
 		<>
-	        <ContactForm 
+	        <ContactFormModal 
     	        modalOpenStateHook={[modalOpenState, setModalOpenState]}
  	        />
             <MobileNav
@@ -41,7 +41,7 @@ export default function BaseLayout({
                                     </div>
                                 </div>
                             </nav>
-                            <div className={`md:mt-20 w-full ${navOpenState ? 'hidden' : ''}`}>
+                            <div className={`overflow-x-hidden md:mt-20 w-full ${navOpenState ? 'hidden' : ''}`}>
                                 {children}
                             </div>
                         </div>

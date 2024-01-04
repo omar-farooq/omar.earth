@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Sora } from 'next/font/google'
+import ContactFormModal from './contactFormModal.jsx'
 import Link from 'next/link'
 
 const sora = Sora({
@@ -9,10 +11,14 @@ const sora = Sora({
 export default function MobileNav({navState}) {
 
     const [open, setOpen] = navState
+    const [modalOpenState, setModalOpenState] = useState(false)
     const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`
 
     return (
         <>
+            <ContactFormModal
+                modalOpenStateHook={[modalOpenState, setModalOpenState]}
+            />
             <div className="flex flex-row justify-between md:hidden" style={ open ? {backgroundColor:"#ffffff"} : {backgroundColor:"#edeaea"}}>
                 <div className={`text-3xl mt-2 ml-4 ${sora.className}`}>omar.earth</div>
                 <button
@@ -45,6 +51,7 @@ export default function MobileNav({navState}) {
                     <Link href="/">Home</Link>
                     <Link href="/blog">Blog</Link>
                     <Link href="/about">About</Link>
+                    <button onClick={() => {setModalOpenState(true); setOpen(false)}}>Contact</button>
                 </div>
             </div>
         </>

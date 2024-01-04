@@ -29,7 +29,7 @@ export default function Modal({title, buttons, modalOpenState, setModalOpenState
 
 	return (
 	<Fragment>
-		<div className={`modal fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto transition-opacity duration-150 ease-linear ${hiddenval} ${modalOpenState ? 'opacity-100' : 'opacity-0'}`}
+		<div className={`modal fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto transition-opacity duration-150 ease-linear z-50 ${hiddenval} ${modalOpenState ? 'opacity-100' : 'opacity-0'}`}
 			tabIndex="-1">
 			<div ref={modalClickPoint} className={`max-w-lg mx-auto m-7 relative w-auto pointer-events-none ${modalOpenState ? 'animate-modalup' : 'animate-modaldown'}`}>
 				<div className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">

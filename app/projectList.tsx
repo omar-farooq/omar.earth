@@ -8,8 +8,8 @@ const Project = (props) => {
 
     return (
         <>
-                <div className="relative group h-[24.5rem] w-[24.5rem] m-4 flex items-center justify-center border-4 border-zinc-100">
-                    <div className="z-50 relative group-hover:scale-50 group-hover:-translate-y-20 ease-in duration-200 h-96 w-96">
+                <div className="relative group h-[20.5rem] w-[21rem] sm:h-[24.5rem] sm:w-[24.5rem] m-4 flex items-center justify-center border-4 border-zinc-100">
+                    <div className="z-50 relative group-hover:scale-50 group-hover:-translate-y-20 ease-in duration-200 h-90 w-90 sm:h-96 sm:w-96">
                         {props.image}
                     </div>
                     <div className="z-0 bg-white absolute w-full h-full top-0">
