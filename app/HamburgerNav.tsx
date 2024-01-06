@@ -19,7 +19,8 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
             <ContactFormModal
                 modalOpenStateHook={[modalOpenState, setModalOpenState]}
             />
-            <nav className={`${mobileOnly && 'md:hidden'} ${open && 'bg-white top-0 absolute z-50 w-full'}`}>
+            <div className="flex justify-center">
+            <nav className={`${mobileOnly && !open && 'md:hidden'} ${open && 'bg-white top-0 absolute z-50'} ${!mobileOnly && open ? 'w-full md:w-11/12' : 'w-full'}`}>
                 <div className="flex flex-row justify-between w-full px-4">
                     <div className={`text-3xl mt-2 ${sora.className}`}>omar.earth</div>
                     <button
@@ -48,6 +49,7 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
                     </button>
                 </div>
             </nav>
+            </div>
             <div className={`absolute h-screen w-screen z-40 bg-white ${open ? 'top-0 left-0 overflow-y-hidden' : 'hidden'}`}>
                 <div className="flex flex-col items-center justify-center text-2xl h-full">
                     <Link href="/">Home</Link>

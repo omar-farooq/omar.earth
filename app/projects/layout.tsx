@@ -1,4 +1,7 @@
+"use client";
+import { useState} from 'react'
 import { Crushed } from 'next/font/google'
+import HamburgerNav from '@/app/HamburgerNav.tsx'
 
 const crushed = Crushed({
     weight: '400',
@@ -6,16 +9,19 @@ const crushed = Crushed({
 })
 
 export default function ProjectLayout({ children }) {
+    const [navOpenState, setNavOpenState] = useState(false)
+
     return (
         <>
             <div className="min-h-screen bg-white flex justify-center text-black">
-                <div className="w-11/12">
+                <div className={`${navOpenState ? "w-full max-h-screen" : "md:w-11/12"}`}> 
                     <header>
-                        <nav className="bg-white text-3xl">
-                            <a href="/">omar.earth</a>
-                        </nav>
-                        <div className={`bg-white ${crushed.className} text-8xl`}>
-                        Projects
+                        <HamburgerNav
+                            navState={[navOpenState, setNavOpenState]}
+                            mobileOnly={false}
+                        />
+                        <div className={`bg-white ${crushed.className} text-8xl ml-4`}>
+                            Projects
                         </div>
                     </header>
                     <main className="">

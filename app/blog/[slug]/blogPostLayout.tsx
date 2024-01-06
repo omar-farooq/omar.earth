@@ -48,8 +48,8 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
     },[])
 
     return (                                                                                                                                                       
-		<>
-			<div 
+        <>
+            <div 
                 className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl items-end justify-center contrast-[.70] ${bask.className} hidden md:flex`} 
                 style={{backgroundImage: `url(/blog_images/${postData.backgroundImage})`}}
             >
