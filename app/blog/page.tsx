@@ -15,7 +15,7 @@ export default async function BlogList() {
     return (
 
         <>
-            <BaseLayout>
+            <BaseLayout page="blog">
                 <div className="flex justify-center text-black md:mt-8">
                     <div className="w-11/12">
                         <section className="py-10 bg-stone-100">

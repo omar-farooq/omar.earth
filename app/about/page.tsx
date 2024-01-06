@@ -68,7 +68,7 @@ export default function About() {
     },[])
 
 	return (
-		<BaseLayout>
+		<BaseLayout page="about">
                     <section className="text-center flex flex-col items-center justify-center text-black min-h-screen -mt-8 rotate-90 sm:rotate-0">
                         <div className="h-full w-full flex items-center py-4 md:py-10 lg:py-0 bg-inherit">
                             <div id="letterGrid" className="grid grid-rows-3 grid-cols-4 w-full md:h-3/4">
