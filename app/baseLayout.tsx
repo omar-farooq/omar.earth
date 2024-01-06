@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Kanit } from 'next/font/google'
 import ContactFormModal from './contactFormModal.jsx'
 import Link from 'next/link'
-import MobileNav from './MobileNav.tsx'
+import HamburgerNav from './HamburgerNav.tsx'
 
 const kanit = Kanit({
     weight: '400',
@@ -24,10 +24,10 @@ export default function BaseLayout({
 	        <ContactFormModal 
     	        modalOpenStateHook={[modalOpenState, setModalOpenState]}
  	        />
-            <MobileNav
+            <HamburgerNav
                 navState={[navOpenState, setNavOpenState]}
             />
-                <main className="flex min-h-screen flex-col items-center min-w-full" style={{backgroundColor:"#edeaea"}}>
+                <main className="flex min-h-screen flex-col items-center min-w-full bg-soft-stone">
                     <div className="lg:w-9/12 flex flex-col items-center">
                         <div className="lg:min-h-screen w-full flex flex-col items-center">
                             <nav className="min-w-full text-zinc-700 md:absolute mt-3 md:mt-0 h-8 lg:h-16 flex items-center hidden md:block">

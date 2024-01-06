@@ -6,6 +6,7 @@ import { Libre_Baskerville } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
+import HamburgerNav from '@/app/HamburgerNav.tsx'
 
 const bitter = Bitter({
     weight: '600',
@@ -30,6 +31,7 @@ const bask = Libre_Baskerville({
 
 export default function BlogPostLayout({ postData, lastTenPosts } : {postData:any, lastTenPosts:any}) {
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
+    const [navOpenState, setNavOpenState] = useState(false)
 
     useEffect(() => {
         function scrollPastHeader() {
@@ -54,17 +56,18 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
                 <div className={`mb-4 bg-black ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
             </div>
 
-            <div className="min-h-screen bg-white flex flex-col items-center text-black">
-                <div className="w-11/12">
-                    <header>
-                        <nav className="bg-white text-3xl">
-                            <a href="/">omar.earth</a>
-                        </nav>
-                        <div className={`bg-white ${crushed.className} text-8xl`}>
+            <div className={`${navOpenState ? 'max-h-screen' : 'min-h-screen'} bg-white flex flex-col items-center text-black`}>
+                <div className={`${navOpenState ? "w-full max-h-screen" : "md:w-11/12"}`}>
+                    <header className="md:mt-4">
+                        <HamburgerNav 
+                            navState={[navOpenState, setNavOpenState]}
+                            mobileOnly={false}
+                        />
+                        <div className={`bg-white ${crushed.className} text-8xl ml-4`}>
                                 <a href="/blog">Blog</a>
                         </div>
                     </header>
-                    <main className="flex md:flex-row flex-col">
+                    <main className={`flex md:flex-row flex-col ${navOpenState && 'hidden'}`}>
                         <div className="md:w-3/4 flex justify-center">
                             <div className="w-5/6 flex flex-col items-center text-center">
                                 <h2 className={`text-3xl mb-6 ${bitter.className}`}>
