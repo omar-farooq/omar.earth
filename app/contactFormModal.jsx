@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Modal from './Modal.jsx'
 
-export default function ContactForm({modalOpenStateHook}) {
+export default function ContactFormModal({modalOpenStateHook}) {
     const [modalOpenState, setModalOpenState] = modalOpenStateHook
     const [formFields, setFormFields] = useState({from: '', email: '', address: '', message: ''})
     const [emailed, setEmailed] = useState(false)
