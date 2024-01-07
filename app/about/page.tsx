@@ -345,7 +345,7 @@ export default function About() {
 
                             <p>The projects I have in place relate to making the world a better, happier and healthier place. Future projects I have will focus on improving the world we live in and with a grander scale and I hope to work with other talented people to make it happen.</p>
 
-                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I'm using AWS for hosting this site.</p> 
+                            <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I&apos;m using AWS for hosting this site.</p> 
 
                             <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle, although I do not wish to guilt anyone into following this. Some small changes that people can make are to eat less meat if you consume a lot and to be aware of how and how much you travel.</p>
                         </div>

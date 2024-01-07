@@ -21,9 +21,9 @@ export default function Home() {
 
                 <div className="flex flex-col md:flex-row">
                     <div className={`${rubik.className} text-3xl sm:text-6xl md:text-9xl xl:text-10xl 2xl:text-11xl md:mt-20 text-center md:w-1/3 flex flex-row md:flex-col justify-center md:justify-normal space-x-2`}>
-                        <span className="">let&apos;s</span>
+                        <span className="text-black">let&apos;s</span>
                         <span className="text-green-300 animate-tuneIn z-10">rewrite</span> 
-                        <span className="">history</span>
+                        <span className="text-black">history</span>
                     </div>
                     <div className="z-40">
                         <Image

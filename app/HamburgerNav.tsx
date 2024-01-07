@@ -51,7 +51,7 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
             </nav>
             </div>
             <div className={`absolute h-screen w-screen z-40 bg-white ${open ? 'top-0 left-0 overflow-y-hidden' : 'hidden'}`}>
-                <div className="flex flex-col items-center justify-center text-3xl md:text-5xl h-full">
+                <div className="flex flex-col items-center justify-center text-3xl md:text-5xl text-black h-full">
                     <Link href="/" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.1s' }}>Home</Link>
                     <Link href="/blog" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.2s' }}>Blog</Link>
                     <Link href="/about" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.3s' }}>About</Link>
