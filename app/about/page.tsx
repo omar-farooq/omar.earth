@@ -334,7 +334,7 @@ export default function About() {
                             </div>
                         </div>
                     </section>
-                    <section className="bg-stone-100 border-black text-center flex flex-col items-center justify-center text-black mt-8">
+                    <section className="bg-stone-100 border-black text-center flex flex-col items-center justify-center text-black mb-12">
                         <h2 className="text-2xl md:text-4xl p-2">
                             About the site
                         </h2>

@@ -12,7 +12,7 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
 
     const [open, setOpen] = navState
     const [modalOpenState, setModalOpenState] = useState(false)
-    const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`
+    const genericHamburgerLine = `h-1 my-1 rounded-full bg-black transition ease transform duration-300 w-6 md:w-9`
 
     return (
         <>
@@ -22,7 +22,7 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
             <div className="flex justify-center">
             <nav className={`${mobileOnly && !open && 'md:hidden'} ${open && 'bg-white top-0 absolute z-50'} ${!mobileOnly && open ? 'w-full md:w-11/12' : 'w-full'}`}>
                 <div className="flex flex-row justify-between w-full px-4">
-                    <div className={`text-3xl mt-2 ${sora.className}`}>omar.earth</div>
+                    <div className={`text-3xl ${open && 'md:text-5xl'} mt-2 ${sora.className}`}>omar.earth</div>
                     <button
                          className={`flex flex-col h-12 w-12 justify-center items-center group`}
                          onClick={() => setOpen(!open)}
@@ -51,11 +51,11 @@ export default function HamburgerNav({navState, mobileOnly=true}) {
             </nav>
             </div>
             <div className={`absolute h-screen w-screen z-40 bg-white ${open ? 'top-0 left-0 overflow-y-hidden' : 'hidden'}`}>
-                <div className="flex flex-col items-center justify-center text-2xl h-full">
-                    <Link href="/">Home</Link>
-                    <Link href="/blog">Blog</Link>
-                    <Link href="/about">About</Link>
-                    <button onClick={() => {setModalOpenState(true); setOpen(false)}}>Contact</button>
+                <div className="flex flex-col items-center justify-center text-3xl md:text-5xl h-full">
+                    <Link href="/" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.1s' }}>Home</Link>
+                    <Link href="/blog" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.2s' }}>Blog</Link>
+                    <Link href="/about" className="animate-slideIn opacity-0" style={{ "animationDelay": '0.3s' }}>About</Link>
+                    <button onClick={() => {setModalOpenState(true); setOpen(false)}} className="animate-slideIn opacity-0" style={{animationDelay: '0.4s'}}>Contact</button>
                 </div>
             </div>
         </>
