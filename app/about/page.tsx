@@ -87,7 +87,12 @@ export default function About() {
                                             }}
                                         />
                                     } 
-                                    overlayText={<><p>My first personal computer was a 486 with Windows 95.</p><p>Apart from playing games, the most exciting aspect of computers at that time that I remember was word processing and, not long after, going on the internet. Changing the font and text colour in Word was exciting and novel when I was young, not so much now.</p></>} 
+                                    overlayText={
+                                        <>
+                                            <p>My first personal computer was a 486 with Windows 95.</p>
+                                            <p>Apart from playing games, the most exciting aspect of computers at that time that I remember was word processing and, not long after, going on the internet. Changing the font and text colour in Word was exciting and novel when I was young, not so much now.</p>
+                                        </>
+                                    } 
                                 />
 
                                 <Box 
@@ -125,8 +130,7 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
-                                            <p>I come from Manchester, UK where it&apos;s always sunny and never rains</p>
-                                            <p>Mark Twain said &quot;I would like to live in Manchester England, the transition between Manchester and death would be unnoticeable&quot;</p>
+                                            <p>I come from Manchester, UK where it&apos;s always rainy</p>
                                         </>
                                     }
                                 />
@@ -146,10 +150,7 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
-                                            <p>For a year, my job involved doing a night shift for which I had to sleep during the days and alter my sleeping pattern</p>
-                                            <p>How I did this was sleep as soon as I came home. Sometimes I&apos;d want to do something in the evening like go swimming or play ultimate, or something would wake me up, which meant that I&apos;d only get 4 or 5 hours sleep. I would then sleep for a few hours before work to try and catch up on sleep</p>
-                                            <p>In terms of eating, my pattern was messed up in that I&apos;d have breakfast when I woke up in the evening, half my dinner before a nap (If I had a nap), the other half after a nap and lunch when I got home from work.</p>
-                                            <p>I did have to give it up in the end because I couldn&apos;t keep it up for longer than a year</p>
+                                            <p>My current job title is &quot;DevOps engineer&quot; but I enjoy working with software and all aspects of development.</p>
                                         </>
                                     }
                                 />
@@ -169,9 +170,7 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
-                                            <p>Many years ago we were being taught at school that various things were predicted for the future: such as increased storms, droughts and flooding due to a phenomena known as &quot;global warming&quot;</p>
-                                            <p>A lot of people laughed this off as an exaggerated dystopian prediction, and people still do but there is a lot of physical evidence as well as all the previous predictions coming true</p>
-                                            <p>I ride my bike everywhere and don&apos;t own a car. It might seem excessive but I think it&apos;s important for everyone to sacrifice something in order to make the world liveable. I don&apos;t think that&apos;s going to happen judging by history and human nature...</p>
+                                            <p>My main mode of transportation is my bike and has been for most of my working life. I had a job where I took the bus for a year, but otherwise I enjoy the fresh air and exercise of a bike.</p>
                                         </>
                                     }
                                 />
@@ -215,6 +214,7 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
+                                            <p>My pronouns are he/him</p>
                                             <p>When I started on a helpdesk I had to shadow people and listen into conversations. One day I was shadowing a woman and another woman was on the other end of the line discussing how men are pigs. It was amusing but awkward for the person I was shadowing.</p>
                                         </>
                                     }
@@ -237,7 +237,7 @@ export default function About() {
                                         <>
                                             <p>I qualified as a Mathematician, although I don&apos;t practice it thanks to my jobs in tech.</p>
                                             <p>My favourite subject from studying mathematics was relativity. It was easily the most interesting as you could see its practical applications, but also the mathematical logic behind it was some of the most advanced I&apos;ve ever seen.</p>
-                                            <p>The most interesting piece of math philosophy has to be the idea that the number pi, an infinite number, could contain every single piece of information that has, does and will ever exist. It is thought to contain everything from the world we live in to an alternate world where everything but me exists (I know, tragedy.)</p>
+                                            <p>The most interesting piece of math philosophy has to be the idea that the number pi, an infinite number, could contain every single piece of information that has, does and will ever exist. It is thought to contain everything from the world we live in to an alternate world where everything but me exists</p>
                                             <p>I guess the most interesting thing would be if I could search it and find out what a world without me would be like. What would be impossible is to try and find out the future since there are probably versions of my life within it where I died yesterday, last week etc.</p>
                                         </>
                                     }
@@ -250,7 +250,7 @@ export default function About() {
                                     image={
                                         <Image
                                             src={heart}
-                                            alt="what I love"
+                                            alt="economy"
                                             style={{
                                                 width: "50%"
                                             }}
@@ -258,8 +258,7 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
-                                            <p>A world without war and conflict and separation would be my ideal. Greed would also have to go.</p>
-                                            <p>From what I&apos;ve seen, the people who are in a position to make changes to benefit others have the mindset of &apos;I had to struggle, so everyone else should&apos; or &apos;The system works for me so it seems fine&apos;. No one seems to be voting for change either which is strange to me.</p>
+                                            <p>I created this site using FOSS and it has influenced my views on how important socialism is and how it would benefit us to fully adopt it.</p>
                                         </>
                                     }
                                 />
@@ -281,7 +280,7 @@ export default function About() {
                                         <>
                                             <p>For me Ocarina of Time is the greatest game ever.</p>
                                             <p>I haven&apos;t played many video games since which have come close and playing such a game so young perhaps killed my love of video games since it&apos;s hard to find a game that matches upto it and keeps my interest.</p>
-                                            <p>I still think the Zelda series is great and love the new games that come out from the series. The switch games in a higher resolution are gorgeous and are how I imagined the N64 games were when playing them, but there&apos;s still an element from the older games that&apos;s missing.</p>
+                                            <p>I still think the Zelda series is great and love the new games that come out from the series.</p>
                                         </>
                                     }
                                 />
@@ -324,10 +323,8 @@ export default function About() {
                                     }
                                     overlayText={
                                         <>
-                                            <p>I try to avoid anything with refined sugar in it. For quite a while I have avoided drinking anything but water. It&apos;s become quite apparent that sugar is the cause of a lot of health problems and I&apos;ve been taught this from a young age</p>
-                                            <p>Since I feel that knowing this has really helped me in life, I will try to pass it on as well as saying that fish is really good, avoid eating too much meat, chips are bland without ketchup and mayo and there&apos;s a lot of healthy food which is more appetising</p>
-                                            <p>A lot of people say that things are ok in moderation but I don&apos;t believe in that theory. I think that a lot of the things we consume in &lsquo;moderation&rsquo; is doing damage that takes longer to recover from than moderation allows for (whatever that even means - moderation is quite subjective).</p>
-                                            <p>I can eat fruit every day, really enjoy it and not get fat, so why would I resort to eating crisps and chocolate which is nowhere near as refreshing?</p>
+                                            <p>I try to avoid anything with refined sugar in it and cut down from when I was 16. If you ever meet me and offer me something sweet and I decline then I do apologise.</p> 
+                                            <p>I feel people are starting to understand my position a bit more, particularly when they are a bit older and are starting to be more mindful of the effects of bad food on their own health.</p>
                                         </>
                                     }
                                 />
@@ -341,13 +338,9 @@ export default function About() {
                         <div className="text-sm md:text-lg lg:text-xl w-4/5 mt-2">
                             <p>At the time of writing we need to change the world we live in - and what better way to do that than using technology!</p>
 
-                            <p>We face a lot of adversity, but this also comes with a lot of opportunity to recreate the world with a lot of the advancements we already have in place.</p>
-
-                            <p>The projects I have in place relate to making the world a better, happier and healthier place. Future projects I have will focus on improving the world we live in and with a grander scale and I hope to work with other talented people to make it happen.</p>
-
                             <p>I&apos;ve re-created my site as a personal tech blog so that I can help keep up-to-date with related tech. I&apos;m using AWS for hosting this site.</p> 
 
-                            <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle, although I do not wish to guilt anyone into following this. Some small changes that people can make are to eat less meat if you consume a lot and to be aware of how and how much you travel.</p>
+                            <p>I&apos;ve gone for a dot earth domain to try and promote a more environmentally friendly lifestyle (as well as the fact that I am from Earth). For more about me click on the boxes above.</p>
                         </div>
                     </section>
 
