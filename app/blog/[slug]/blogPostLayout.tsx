@@ -4,9 +4,8 @@ import { Bitter } from 'next/font/google'
 import { Crushed } from 'next/font/google'
 import { Libre_Baskerville } from 'next/font/google'
 import { Montserrat } from 'next/font/google'
-import Image from 'next/image'
 import Link from 'next/link'
-import HamburgerNav from '@/app/HamburgerNav.tsx'
+import HamburgerNav from '@/app/HamburgerNav'
 
 const bitter = Bitter({
     weight: '600',
@@ -29,7 +28,7 @@ const bask = Libre_Baskerville({
     subsets: ['latin'],
 })
 
-export default function BlogPostLayout({ postData, lastTenPosts } : {postData:any, lastTenPosts:any}) {
+export default function BlogPostLayout({ postData, lastTenPosts }: { postData: any, lastTenPosts: any }) {
     const [scrolledPastHeader, setScrolledPastHeader] = useState(false)
     const [navOpenState, setNavOpenState] = useState(false)
 
@@ -45,13 +44,13 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
 
         window.addEventListener("scroll", scrollPastHeader);
         return () => window.removeEventListener("scroll", scrollPastHeader)
-    },[])
+    }, [])
 
-    return (                                                                                                                                                       
+    return (
         <>
-            <div 
-                className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl items-end justify-center contrast-[.70] ${bask.className} hidden md:flex`} 
-                style={{backgroundImage: `url(/blog_images/${postData.backgroundImage})`}}
+            <div
+                className={`w-full h-[calc(55vh)] bg-no-repeat bg-cover bg-center bg-fixed text-white text-center text-6xl items-end justify-center contrast-[.70] ${bask.className} hidden md:flex`}
+                style={{ backgroundImage: `url(/blog_images/${postData.backgroundImage})` }}
             >
                 <div className={`mb-4 bg-black ${scrolledPastHeader ? 'hidden' : ''}`}>{postData.title}</div>
             </div>
@@ -59,12 +58,12 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
             <div className={`${navOpenState ? 'max-h-screen' : 'min-h-screen'} bg-white flex flex-col items-center text-black`}>
                 <div className={`${navOpenState ? "w-full max-h-screen" : "md:w-11/12"}`}>
                     <header className="md:mt-4">
-                        <HamburgerNav 
+                        <HamburgerNav
                             navState={[navOpenState, setNavOpenState]}
                             mobileOnly={false}
                         />
                         <div className={`bg-white ${crushed.className} text-8xl ml-4`}>
-                                <a href="/blog">Blog</a>
+                            <a href="/blog">Blog</a>
                         </div>
                     </header>
                     <main className={`flex md:flex-row flex-col ${navOpenState && 'hidden'}`}>
@@ -81,13 +80,13 @@ export default function BlogPostLayout({ postData, lastTenPosts } : {postData:an
                         <div className="md:w-1/4 flex flex-col items-center text-center md:mt-0 mt-10">
                             <h4 className="text-2xl">Recent Posts</h4>
                             <ul>
-                                {lastTenPosts.map((x : any) => 
+                                {lastTenPosts.map((x: any) =>
                                     <li key={x.id}>
                                         <Link href={`${x.id}`}>{x.title}</Link>
                                     </li>
                                 )}
                             </ul>
-                            
+
                         </div>
 
                     </main>

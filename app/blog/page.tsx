@@ -25,7 +25,7 @@ export default async function BlogList() {
                                     <article key={id} className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
                                         <a href={`/blog/${id}`}>
                                             <div className="relative flex items-end overflow-hidden rounded-xl">
-                                                <img src={`${'/blog_images/' + backgroundImage}`} alt="blog image" />
+                                                <img src={`${'/blog_images/' + backgroundImage}`} alt="blog image" className='aspect-square' />
                                             </div>
 
                                             <div className="mt-1 p-2">
