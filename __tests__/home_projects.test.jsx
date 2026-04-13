@@ -3,11 +3,13 @@ import { render, screen } from '@testing-library/react'
 import Home from '../app/page'
 
 describe('Home', () => {
-    it('Loads project list', () => {
+    it('Renders home page with blog and about links', () => {
         render(<Home />)
 
-        const projectHeading = screen.getByRole('heading', { level: 2, name: 'Projects' })
-        expect(projectHeading).toBeInTheDocument()
+        const blogLink = screen.getByRole('link', { name: /read the blog/i })
+        expect(blogLink).toBeInTheDocument()
 
+        const aboutLink = screen.getByRole('link', { name: /about me/i })
+        expect(aboutLink).toBeInTheDocument()
     })
 })
