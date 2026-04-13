@@ -1,4 +1,3 @@
-import BaseLayout from '@/src/baseLayout.tsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import duffa from '@/public/duffa-cropped.png'

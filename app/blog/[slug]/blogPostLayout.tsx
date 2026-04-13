@@ -72,7 +72,7 @@ export default function BlogPostLayout({ postData, lastTenPosts }: { postData: a
                                 <h2 className={`text-3xl mb-6 ${bitter.className}`}>
                                     {postData.title}
                                 </h2>
-                                <div className={`w-5/6 flex justify-center text-center prose ${montserrat.className}`}>
+                                <div className={`w-5/6 flex justify-center prose max-w-none text-left ${montserrat.className}`}>
                                     <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
     h3 {
-        @apply text-xl p-4 font-bold;
+        @apply text-xl font-bold;
     }
 }
 @tailwind components;
